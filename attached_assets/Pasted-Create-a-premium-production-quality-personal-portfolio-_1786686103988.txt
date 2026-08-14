@@ -1,0 +1,724 @@
+Create a premium, production-quality personal portfolio website for me.
+
+I am a Data Analyst / Business Intelligence-focused professional and B.Tech Artificial Intelligence & Data Science student from Mumbai, India.
+
+This is a REAL personal portfolio, not a generic template.
+
+==================================================
+CORE GOAL
+==================================================
+
+Build a polished portfolio that I can use for:
+
+- Data Analyst job applications
+- Business Intelligence roles
+- Internship applications
+- LinkedIn
+- Recruiter outreach
+- Resume
+
+The website should immediately communicate:
+
+"Data Analyst who can turn business data into actionable insights."
+
+The visual quality should feel like a modern analytics/product website.
+
+Do NOT make it look like:
+- a generic developer portfolio
+- a student template
+- a gaming website
+- a cyberpunk website
+- an AI-generated landing page
+- an excessive neon/glassmorphism design
+
+==================================================
+IMPORTANT DESIGN REFERENCE
+==================================================
+
+Use this website ONLY as inspiration for the QUALITY OF TRANSITIONS:
+
+https://phazeai.com/
+
+I particularly like the smooth movement and transitions between sections.
+
+DO NOT copy PhazeAI's:
+- branding
+- text
+- layout
+- graphics
+- colors
+- assets
+- visual identity
+
+Create an ORIGINAL portfolio design.
+
+==================================================
+VISUAL STYLE
+==================================================
+
+Use a sophisticated dark analytics-inspired theme.
+
+Primary background:
+deep navy / charcoal
+
+Surface:
+slightly lighter navy cards
+
+Primary accent:
+professional cyan / blue
+
+Secondary accent:
+subtle violet
+
+Success accent:
+subtle green
+
+Typography:
+Inter or Manrope
+
+The design should have:
+- strong hierarchy
+- generous spacing
+- clean cards
+- subtle borders
+- subtle shadows
+- restrained gradients
+- excellent readability
+
+Avoid excessive glow.
+
+Do not make every element animated.
+
+==================================================
+SITE STRUCTURE
+==================================================
+
+Create one smooth single-page portfolio.
+
+Sections:
+
+1. Home
+2. About
+3. Skills
+4. Experience
+5. Projects
+6. Education
+7. Certifications
+8. Contact
+
+Navbar:
+
+Home
+About
+Skills
+Experience
+Projects
+Education
+Contact
+
+Right side:
+Resume
+
+Navbar should remain accessible while scrolling.
+
+==================================================
+HERO
+==================================================
+
+Create a strong professional hero section.
+
+LEFT SIDE:
+
+Small label:
+
+DATA ANALYST • BUSINESS INTELLIGENCE
+
+Main headline:
+
+Turning Data Into
+Business Impact.
+
+Supporting text:
+
+"I build data-driven solutions using SQL, Power BI, Excel and Python to transform raw data into clear, actionable business insights."
+
+Buttons:
+
+View My Work
+Download Resume
+
+RIGHT SIDE:
+
+Use my uploaded professional photograph.
+
+IMPORTANT:
+
+Use the uploaded photo directly.
+
+DO NOT regenerate my face.
+
+DO NOT alter facial features.
+
+DO NOT make the image AI-generated.
+
+DO NOT distort the face.
+
+Preserve image quality.
+
+You may improve/remove the background if necessary, but preserve the original person and image quality.
+
+The photo should be professionally positioned, not simply placed inside a generic circular avatar.
+
+Use a sophisticated portrait frame with subtle depth.
+
+==================================================
+HERO CREDIBILITY METRICS
+==================================================
+
+Include a compact row of credibility metrics:
+
+3+
+Featured Projects
+
+1+
+Internship
+
+8.99/10
+CGPA
+
+150+
+Reusable DAX Measures
+
+Do not invent additional metrics.
+
+==================================================
+HERO ANIMATION
+==================================================
+
+On initial load:
+
+Navbar → subtle fade
+Eyebrow → fade/slide
+Headline → reveal
+Description → reveal
+Buttons → reveal
+Photo → subtle reveal
+Metrics → staggered reveal
+
+Keep this elegant and fast.
+
+No bouncing.
+
+No excessive motion.
+
+==================================================
+SMOOTH NAVIGATION
+==================================================
+
+THIS IS VERY IMPORTANT.
+
+When the user clicks a navbar item, the page must smoothly move to the corresponding section.
+
+Do NOT abruptly jump.
+
+Implement:
+
+- smooth scrolling
+- scroll-padding-top
+- active navigation indicator
+- section reveal animations
+- IntersectionObserver
+- subtle directional movement
+- consistent easing
+
+Use an elegant easing curve such as:
+
+cubic-bezier(0.22, 1, 0.36, 1)
+
+Sections should feel connected.
+
+Respect:
+
+prefers-reduced-motion
+
+If reduced motion is enabled, minimize animations.
+
+==================================================
+ABOUT
+==================================================
+
+Title:
+
+About Me
+
+Content:
+
+"I'm a B.Tech Artificial Intelligence & Data Science student focused on data analytics and business intelligence. I enjoy turning raw datasets into dashboards, analytical models, and insights that support better business decisions.
+
+My core toolkit includes SQL, Power BI, Excel, Python, Pandas, NumPy and data visualization. I also have hands-on experience building AI-powered analytical workflows through my internship at Yodaplus Technologies."
+
+Include a small "What I bring" group:
+
+Data Analysis
+Business Intelligence
+Dashboard Development
+SQL & Data Modeling
+Data Visualization
+Problem Solving
+
+==================================================
+SKILLS
+==================================================
+
+Create a clean categorized skill section.
+
+CORE ANALYTICS
+
+SQL
+MySQL
+Power BI
+Tableau
+Microsoft Excel
+DAX
+Power Query
+Data Analysis
+Data Visualization
+Dashboard Development
+Data Cleaning
+Data Modeling
+
+PROGRAMMING & DATA
+
+Python
+Pandas
+NumPy
+scikit-learn
+
+AI / TOOLS
+
+Machine Learning
+CrewAI
+SHAP
+Streamlit
+Git
+GitHub
+Linux
+
+Do NOT use fake percentages such as "SQL 95%".
+
+Do NOT claim expertise levels that have not been provided.
+
+==================================================
+EXPERIENCE
+==================================================
+
+Finance Intern
+
+Yodaplus Technologies Pvt. Ltd.
+
+Jun 2025 – Aug 2025
+
+Mumbai, India
+
+Description:
+
+- Developed AI-powered financial analysis workflows using the CrewAI multi-agent framework across FMCG, IT, logistics, pharma, energy, and manufacturing domains.
+- Designed multi-agent task logic, prompts, and evaluation criteria to improve output quality and consistency.
+- Adapted AI solutions for US and Indian financial markets to generate domain-specific insights.
+- Collaborated cross-functionally with product and engineering teams to refine AI-driven financial tools.
+
+Skills:
+
+CrewAI
+Financial Analysis
+Business Communication
+Python
+Data Analysis
+Prompt Engineering
+
+Present this as a premium professional timeline/card.
+
+==================================================
+PROJECTS
+==================================================
+
+This should be one of the strongest sections of the website.
+
+Use the THREE uploaded project thumbnails.
+
+Do NOT generate replacement images.
+
+------------------------------------------
+PROJECT 1
+------------------------------------------
+
+Project VELOX
+
+Category:
+Business Intelligence / Power BI
+
+Description:
+
+"A five-page Power BI business intelligence platform with a unified semantic model, 150+ reusable DAX measures, and executive, operations, customer, restaurant and financial dashboards."
+
+Technologies:
+
+Power BI
+DAX
+Data Modeling
+Business Intelligence
+
+------------------------------------------
+PROJECT 2
+------------------------------------------
+
+Electronics Distribution Analytics
+
+Category:
+Data Analytics / Power BI
+
+Description:
+
+"Interactive analytics dashboard built to analyze sales, costs, shipments, profitability, product performance and regional business trends."
+
+Technologies:
+
+Power BI
+DAX
+Excel
+Data Analysis
+Data Visualization
+
+------------------------------------------
+PROJECT 3
+------------------------------------------
+
+AI-Powered Customer Retention Intelligence System
+
+Category:
+Machine Learning / Analytics
+
+Description:
+
+"Machine learning solution designed to predict customer churn risk and provide interpretable insights into customer behavior using classification models and SHAP."
+
+Technologies:
+
+Python
+Pandas
+scikit-learn
+SHAP
+Streamlit
+Machine Learning
+
+==================================================
+PROJECT CARD DESIGN
+==================================================
+
+Each project card should contain:
+
+Project image
+Category
+Project title
+Short description
+Technology tags
+View Project / Case Study button
+
+On hover:
+
+- image subtly scales
+- card slightly rises
+- border becomes slightly more visible
+- CTA becomes emphasized
+
+Keep the interaction subtle.
+
+Do not over-animate.
+
+==================================================
+PROJECT DETAIL INTERACTION
+==================================================
+
+When clicking a project card:
+
+Open a smooth project detail view/modal.
+
+Include:
+
+Overview
+Problem
+Approach
+Tools
+Key analytical work
+Project image
+
+Only use information actually provided.
+
+Do NOT invent:
+- users
+- revenue
+- accuracy
+- business impact
+- clients
+- fake metrics
+
+If information is unavailable, do not fabricate it.
+
+Modal must:
+- animate smoothly
+- have a clear close button
+- close with Escape
+- close appropriately when clicking outside
+- work on mobile
+
+==================================================
+EDUCATION
+==================================================
+
+K J Somaiya Institute of Technology
+
+Bachelor of Engineering
+Artificial Intelligence & Data Science
+
+CGPA:
+8.99/10
+
+Status:
+Pursuing
+
+Present this professionally.
+
+==================================================
+CERTIFICATIONS
+==================================================
+
+Deloitte Australia Data Analytics Job Simulation
+
+Forage
+
+August 2026
+
+Practical areas:
+
+Data Analysis
+Forensic Technology
+Tableau
+Excel
+
+Create a clean certification card.
+
+Do not invent credential IDs.
+
+==================================================
+CONTACT
+==================================================
+
+Headline:
+
+Let's turn data into something useful.
+
+Text:
+
+"I'm open to Data Analyst, Business Intelligence and analytics-focused opportunities."
+
+Include:
+
+Email
+LinkedIn
+GitHub
+Resume
+
+Use actual links only if available.
+
+Do not invent links.
+
+If there is no backend for a contact form, use a mailto link rather than pretending the form sends email.
+
+==================================================
+FOOTER
+==================================================
+
+Sahil Darji
+
+Data Analyst | Business Intelligence
+
+© 2026 Sahil Darji
+
+LinkedIn
+GitHub
+Email
+Resume
+
+==================================================
+COLOR SYSTEM
+==================================================
+
+Use CSS variables approximately around:
+
+Background:
+#07111F
+
+Surface:
+#0D1A2B
+
+Secondary surface:
+#13243A
+
+Primary text:
+#F4F7FB
+
+Muted text:
+#9AA9BC
+
+Primary accent:
+#38BDF8
+
+Secondary accent:
+#8B5CF6
+
+Success:
+#22C55E
+
+Borders:
+rgba(255,255,255,0.08)
+
+Adjust values where necessary for visual harmony and accessibility.
+
+==================================================
+RESPONSIVE DESIGN
+==================================================
+
+Must work properly at:
+
+1440px
+1280px
+1024px
+768px
+480px
+390px
+360px
+
+Mobile:
+
+- hamburger navigation
+- stacked hero
+- photo remains high quality
+- single-column projects
+- readable typography
+- no horizontal scrolling
+- no clipped text
+- buttons remain usable
+- comfortable section spacing
+
+==================================================
+TECHNICAL QUALITY
+==================================================
+
+Use a modern lightweight stack.
+
+Prefer:
+
+React + Vite
+
+or another lightweight architecture that Replit handles reliably.
+
+Use reusable components.
+
+Suggested structure:
+
+Navbar
+Hero
+About
+Skills
+Experience
+Projects
+ProjectCard
+ProjectModal
+Education
+Certifications
+Contact
+Footer
+
+Do not create one giant component.
+
+Use CSS variables.
+
+Use semantic HTML.
+
+Use alt text.
+
+Support keyboard navigation.
+
+Support reduced motion.
+
+==================================================
+PERFORMANCE
+==================================================
+
+Prioritize performance.
+
+Do not install unnecessary libraries.
+
+Prefer CSS transitions and transforms.
+
+Avoid expensive animations.
+
+Optimize images without noticeably reducing quality.
+
+Lazy-load project images where appropriate.
+
+==================================================
+IMPORTANT — DO NOT INVENT CONTENT
+==================================================
+
+Never invent:
+
+fake employers
+fake clients
+fake certifications
+fake awards
+fake metrics
+fake project users
+fake revenue
+fake accuracy
+fake business results
+fake testimonials
+fake links
+
+Use only the information provided here and the uploaded assets.
+
+==================================================
+FINAL QUALITY CHECK
+==================================================
+
+Before considering the website complete, test:
+
+- every navbar link
+- smooth scrolling
+- active navigation
+- mobile menu
+- project cards
+- project modal
+- Escape-to-close
+- buttons
+- email link
+- LinkedIn link if available
+- GitHub link if available
+- resume button
+- image loading
+- responsive layout
+- keyboard navigation
+- reduced motion
+- console errors
+- horizontal overflow
+- text clipping
+
+Fix all errors you find.
+
+IMPORTANT:
+
+Do not redesign the site repeatedly after it is working.
+
+First produce a cohesive, polished version.
+
+The goal is a premium professional Data Analyst portfolio — clean, analytical, modern and recruiter-friendly.

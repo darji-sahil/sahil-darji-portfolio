@@ -1,0 +1,397 @@
+import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
+import {
+  ArrowDownRight,
+  Check,
+  ChevronRight,
+  Download,
+  Menu,
+  X,
+} from 'lucide-react';
+import portraitPath from '@assets/Myphoto_1786686114750.png';
+import veloxPath from '@assets/VELOX_Executive_BI_thumbnail_1786686114749.png';
+import electronicsPath from '@assets/Electronics_Distribution_thumbnail_1786686114748.png';
+import retentionPath from '@assets/Customer_Retention_thumbnail_1786686114751.png';
+
+type Project = {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tools: string[];
+  overview: string;
+  problem: string;
+  approach: string;
+  analyticalWork: string;
+};
+
+const navItems = [
+  ['home', 'Home'],
+  ['about', 'About'],
+  ['skills', 'Skills'],
+  ['experience', 'Experience'],
+  ['projects', 'Projects'],
+  ['education', 'Education'],
+  ['contact', 'Contact'],
+];
+
+const projects: Project[] = [
+  {
+    id: 'velox',
+    title: 'Project VELOX',
+    category: 'Business Intelligence / Power BI',
+    description: 'A five-page Power BI business intelligence platform with a unified semantic model, 150+ reusable DAX measures, and executive, operations, customer, restaurant and financial dashboards.',
+    image: veloxPath,
+    tools: ['Power BI', 'DAX', 'Data Modeling', 'Business Intelligence'],
+    overview: 'A five-page Power BI business intelligence platform with a unified semantic model, 150+ reusable DAX measures, and executive, operations, customer, restaurant and financial dashboards.',
+    problem: 'Not specified in the provided brief.',
+    approach: 'Built around a unified semantic model and reusable DAX measures across five dashboard areas.',
+    analyticalWork: 'Executive, operations, customer, restaurant and financial dashboard views; 150+ reusable DAX measures.',
+  },
+  {
+    id: 'electronics',
+    title: 'Electronics Distribution Analytics',
+    category: 'Data Analytics / Power BI',
+    description: 'Interactive analytics dashboard built to analyze sales, costs, shipments, profitability, product performance and regional business trends.',
+    image: electronicsPath,
+    tools: ['Power BI', 'DAX', 'Excel', 'Data Analysis', 'Data Visualization'],
+    overview: 'Interactive analytics dashboard built to analyze sales, costs, shipments, profitability, product performance and regional business trends.',
+    problem: 'Not specified in the provided brief.',
+    approach: 'Structured dashboard views around sales, costs, shipments, profitability, product performance and regional trends.',
+    analyticalWork: 'Interactive analysis of sales, costs, shipments, profitability, product performance and regional business trends.',
+  },
+  {
+    id: 'retention',
+    title: 'AI-Powered Customer Retention Intelligence System',
+    category: 'Machine Learning / Analytics',
+    description: 'Machine learning solution designed to predict customer churn risk and provide interpretable insights into customer behavior using classification models and SHAP.',
+    image: retentionPath,
+    tools: ['Python', 'Pandas', 'scikit-learn', 'SHAP', 'Streamlit', 'Machine Learning'],
+    overview: 'Machine learning solution designed to predict customer churn risk and provide interpretable insights into customer behavior using classification models and SHAP.',
+    problem: 'Not specified in the provided brief.',
+    approach: 'Used classification models and SHAP to connect churn-risk prediction with interpretable customer behavior insights.',
+    analyticalWork: 'Customer churn-risk prediction, classification modeling and interpretable analysis with SHAP.',
+  },
+];
+
+function usePortfolioNavigation() {
+  const [active, setActive] = useState('home');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const sections = navItems.map(([id]) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActive(visible.target.id);
+      },
+      { rootMargin: '-18% 0px -60% 0px', threshold: [0.05, 0.25, 0.5] },
+    );
+    sections.forEach((section) => observer.observe(section));
+    const onScroll = () => setScrolled(window.scrollY > 15);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  return { active, scrolled, scrollTo };
+}
+
+function Reveal({ children, className = '', delay = '' }: { children: ReactNode; className?: string; delay?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    if (!ref.current) return;
+    const node = ref.current;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.08 });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  return <div ref={ref} className={`reveal ${delay} ${visible ? 'is-visible' : ''} ${className}`}>{children}</div>;
+}
+
+function Navbar({ active, scrolled, scrollTo }: { active: string; scrolled: boolean; scrollTo: (id: string) => void }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const move = (id: string) => {
+    setMenuOpen(false);
+    scrollTo(id);
+  };
+  return (
+    <header className={`topbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container-wide nav-inner">
+        <button className="brand" onClick={() => move('home')} data-testid="button-brand" aria-label="Go to home">
+          <span className="brand-mark">SD</span><span>Sahil Darji</span>
+        </button>
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          {navItems.map(([id, label]) => (
+            <button key={id} className={`nav-link ${active === id ? 'active' : ''}`} onClick={() => move(id)} data-testid={`button-nav-${id}`}>
+              {label}
+            </button>
+          ))}
+        </nav>
+        <a className="resume-link" href="/sahil-darji-resume.txt" download data-testid="link-resume-nav">
+          Resume <Download size={13} />
+        </a>
+        <button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen} aria-controls="mobile-nav" data-testid="button-mobile-menu">
+          {menuOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
+        {menuOpen && (
+          <nav id="mobile-nav" className="mobile-menu" aria-label="Mobile navigation">
+            {navItems.map(([id, label]) => (
+              <button key={id} className={active === id ? 'active' : ''} onClick={() => move(id)} data-testid={`button-mobile-nav-${id}`}>{label}</button>
+            ))}
+            <a href="/sahil-darji-resume.txt" download onClick={() => setMenuOpen(false)} data-testid="link-resume-mobile">Download Resume</a>
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+}
+
+function Hero({ scrollTo }: { scrollTo: (id: string) => void }) {
+  const metrics = [['3+', 'Featured Projects'], ['1+', 'Internship'], ['8.99/10', 'CGPA'], ['150+', 'Reusable DAX Measures']];
+  return (
+    <section id="home" className="hero">
+      <div className="container-wide">
+        <div className="hero-grid">
+          <div>
+            <Reveal><div className="eyebrow">Data Analyst <span aria-hidden="true">•</span> Business Intelligence</div></Reveal>
+            <Reveal delay="stagger-1"><h1>Turning Data Into <em>Business Impact.</em></h1></Reveal>
+            <Reveal delay="stagger-2"><p className="hero-copy">I build data-driven solutions using SQL, Power BI, Excel and Python to transform raw data into clear, actionable business insights.</p></Reveal>
+            <Reveal delay="stagger-3">
+              <div className="hero-actions">
+                <button className="button-primary" onClick={() => scrollTo('projects')} data-testid="button-view-work">View My Work <ArrowDownRight size={15} /></button>
+                <a className="button-secondary" href="/sahil-darji-resume.txt" download data-testid="link-download-resume">Download Resume <Download size={14} /></a>
+              </div>
+              <div className="hero-note"><span className="status-dot" /> Open to analytics-focused opportunities</div>
+            </Reveal>
+          </div>
+          <Reveal delay="stagger-2">
+            <div className="portrait-wrap">
+              <div className="portrait-frame">
+                <img src={portraitPath} alt="Sahil Darji, Data Analyst and Business Intelligence professional" />
+                <div className="portrait-caption">MUMBAI / INDIA</div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal delay="stagger-3">
+          <div className="metrics" aria-label="Professional highlights">
+            {metrics.map(([value, label], index) => <div className="metric" key={label} data-testid={`metric-${index}`}><div className="metric-value">{value}</div><div className="metric-label">{label}</div></div>)}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function SectionHeading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
+  return <div className="section-heading"><div className="eyebrow">{eyebrow}</div><h2>{title}</h2>{description && <p>{description}</p>}</div>;
+}
+
+function About() {
+  const bring = ['Data Analysis', 'Business Intelligence', 'Dashboard Development', 'SQL & Data Modeling', 'Data Visualization', 'Problem Solving'];
+  return (
+    <section id="about" className="section">
+      <div className="container-wide">
+        <Reveal><SectionHeading eyebrow="01 / About" title="A practical lens on complex data." description="The goal is not more charts. It is a clearer next decision." /></Reveal>
+        <div className="about-grid">
+          <Reveal delay="stagger-1">
+            <div className="about-copy">
+              <p>I'm a B.Tech Artificial Intelligence &amp; Data Science student focused on data analytics and business intelligence. I enjoy turning raw datasets into dashboards, analytical models, and insights that support better business decisions.</p>
+              <p>My core toolkit includes SQL, Power BI, Excel, Python, Pandas, NumPy and data visualization. I also have hands-on experience building AI-powered analytical workflows through my internship at Yodaplus Technologies.</p>
+              <div className="bring-grid">{bring.map((item) => <div className="bring-item" key={item}>{item}</div>)}</div>
+            </div>
+          </Reveal>
+          <Reveal delay="stagger-2">
+            <div className="signal-card">
+              <h3>THE WORKING SIGNAL</h3>
+              <div className="signal-lines">
+                <div className="signal-line"><span>Raw data</span><span>→ structure</span></div>
+                <div className="signal-line"><span>Structure</span><span>→ analysis</span></div>
+                <div className="signal-line"><span>Analysis</span><span>→ insight</span></div>
+                <div className="signal-line"><span>Insight</span><span>→ action</span></div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Skills() {
+  const groups = [
+    ['01', 'Core Analytics', ['SQL', 'MySQL', 'Power BI', 'Tableau', 'Microsoft Excel', 'DAX', 'Power Query', 'Data Analysis', 'Data Visualization', 'Dashboard Development', 'Data Cleaning', 'Data Modeling']],
+    ['02', 'Programming & Data', ['Python', 'Pandas', 'NumPy', 'scikit-learn']],
+    ['03', 'AI / Tools', ['Machine Learning', 'CrewAI', 'SHAP', 'Streamlit', 'Git', 'GitHub', 'Linux']],
+  ];
+  return (
+    <section id="skills" className="section">
+      <div className="container-wide">
+        <Reveal><SectionHeading eyebrow="02 / Skills" title="The toolkit behind the insight." description="A working stack across analytics, data products, and AI-powered workflows." /></Reveal>
+        <div className="skills-grid">{groups.map(([index, title, skills], groupIndex) => <Reveal key={title as string} delay={`stagger-${groupIndex + 1}`}><div className="skill-card"><div className="skill-index">{index}</div><h3>{title}</h3><div className="skill-list">{(skills as string[]).map((skill) => <span className="skill-pill" key={skill}>{skill}</span>)}</div></div></Reveal>)}</div>
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  const bullets = [
+    'Developed AI-powered financial analysis workflows using the CrewAI multi-agent framework across FMCG, IT, logistics, pharma, energy, and manufacturing domains.',
+    'Designed multi-agent task logic, prompts, and evaluation criteria to improve output quality and consistency.',
+    'Adapted AI solutions for US and Indian financial markets to generate domain-specific insights.',
+    'Collaborated cross-functionally with product and engineering teams to refine AI-driven financial tools.',
+  ];
+  const tags = ['CrewAI', 'Financial Analysis', 'Business Communication', 'Python', 'Data Analysis', 'Prompt Engineering'];
+  return (
+    <section id="experience" className="section">
+      <div className="container-wide">
+        <Reveal><SectionHeading eyebrow="03 / Experience" title="Where analysis meets the product." /></Reveal>
+        <Reveal delay="stagger-1">
+          <div className="experience-card">
+            <div className="experience-meta"><strong>Jun 2025 – Aug 2025</strong>Mumbai, India</div>
+            <div className="experience-body">
+              <h3>Finance Intern</h3><div className="company">Yodaplus Technologies Pvt. Ltd.</div>
+              <ul>{bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+              <div className="tag-row">{tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Projects({ onOpen }: { onOpen: (project: Project) => void }) {
+  return (
+    <section id="projects" className="section projects-section">
+      <div className="container-wide">
+        <Reveal><div className="projects-heading"><SectionHeading eyebrow="04 / Selected work" title="Dashboards that answer the next question." description="A selection of analytical systems built to move from information to understanding." /><span className="mono" style={{ color: 'var(--muted-text)', fontSize: 11 }}>03 / 03 PROJECTS</span></div></Reveal>
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <Reveal key={project.id} delay={`stagger-${(index % 3) + 1}`}>
+              <article className="project-card" role="button" tabIndex={0} onClick={() => onOpen(project)} onKeyDown={(event: KeyboardEvent<HTMLElement>) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onOpen(project); } }} data-testid={`card-project-${project.id}`} aria-label={`View details for ${project.title}`}>
+                <div className="project-image"><img src={project.image} alt={`${project.title} dashboard thumbnail`} loading={index === 0 ? 'eager' : 'lazy'} /></div>
+                <div className="project-info"><div className="project-category">{project.category}</div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tools.slice(0, 4).map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div><div className="project-cta" style={{ marginTop: 20 }}>View Case Study <ChevronRight size={15} /></div></div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Credentials() {
+  return (
+    <section id="education" className="section">
+      <div className="container-wide">
+        <Reveal><SectionHeading eyebrow="05 / Education & certification" title="A foundation in systems, analysis, and applied learning." /></Reveal>
+        <div className="credentials-grid">
+          <Reveal delay="stagger-1">
+            <div className="credential-card">
+              <div className="credential-label">Education / 2022 — present</div>
+              <h3>K J Somaiya Institute of Technology</h3>
+              <p>Bachelor of Engineering<br />Artificial Intelligence &amp; Data Science</p>
+              <div className="credential-meta"><span>CGPA <strong>8.99/10</strong></span><span>Status <strong>Pursuing</strong></span></div>
+            </div>
+          </Reveal>
+          <Reveal delay="stagger-2">
+            <div className="credential-card" id="certifications">
+              <div className="credential-label">Certification / August 2026</div>
+              <h3>Deloitte Australia Data Analytics Job Simulation</h3>
+              <p>Forage</p>
+              <div className="credential-meta"><span><Check size={12} style={{ verticalAlign: 'middle', marginRight: 5, color: 'var(--green)' }} />Data Analysis</span><span>Forensic Technology</span><span>Tableau</span><span>Excel</span></div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="section contact-section">
+      <div className="container-wide">
+        <Reveal>
+          <div className="contact-block">
+            <div><div className="eyebrow">06 / Contact</div><h2>Let's turn data into something useful.</h2><p>I'm open to Data Analyst, Business Intelligence and analytics-focused opportunities.</p></div>
+            <div className="contact-links">
+              <div className="contact-link" aria-disabled="true" data-testid="link-email-placeholder"><span>Email</span><span>Address not provided</span></div>
+              <div className="contact-link" aria-disabled="true" data-testid="link-linkedin-placeholder"><span>LinkedIn</span><span>Link not provided</span></div>
+              <div className="contact-link" aria-disabled="true" data-testid="link-github-placeholder"><span>GitHub</span><span>Link not provided</span></div>
+              <a className="contact-link" href="/sahil-darji-resume.txt" download data-testid="link-resume-contact"><span>Resume</span><span>Download <Download size={13} /></span></a>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return <footer className="footer"><div className="container-wide footer-inner"><div><span className="footer-name">Sahil Darji</span><span style={{ marginLeft: 12 }}>Data Analyst | Business Intelligence</span></div><div className="footer-links"><span>© 2026 Sahil Darji</span><span data-testid="link-footer-email-placeholder">Email — address not provided</span><a href="/sahil-darji-resume.txt" download data-testid="link-footer-resume">Resume</a></div></div></footer>;
+}
+
+function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKeyDown = (event: globalThis.KeyboardEvent) => { if (event.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKeyDown);
+    dialogRef.current?.focus();
+    return () => { document.body.style.overflow = previous; document.removeEventListener('keydown', onKeyDown); };
+  }, [onClose]);
+  return (
+    <div className="modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }} role="presentation">
+      <div className="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" tabIndex={-1} ref={dialogRef}>
+        <div className="modal-top"><div><div className="eyebrow">{project.category}</div><h2 id="project-modal-title">{project.title}</h2></div><button className="modal-close" onClick={onClose} aria-label="Close project details" data-testid="button-close-project-modal"><X size={17} /></button></div>
+        <div className="modal-content">
+          <div><img src={project.image} alt={`${project.title} full dashboard view`} /></div>
+          <div className="detail-list">
+            <div className="detail-item"><h4>Overview</h4><p>{project.overview}</p></div>
+            <div className="detail-item"><h4>Problem</h4><p>{project.problem}</p></div>
+            <div className="detail-item"><h4>Approach</h4><p>{project.approach}</p></div>
+            <div className="detail-item"><h4>Key analytical work</h4><p>{project.analyticalWork}</p></div>
+            <div className="detail-item"><h4>Tools</h4><div className="modal-tools">{project.tools.map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Portfolio() {
+  const { active, scrolled, scrollTo } = usePortfolioNavigation();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  return (
+    <div className="site-shell">
+      <Navbar active={active} scrolled={scrolled} scrollTo={scrollTo} />
+      <main>
+        <Hero scrollTo={scrollTo} />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects onOpen={setSelectedProject} />
+        <Credentials />
+        <Contact />
+      </main>
+      <Footer />
+      {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
+    </div>
+  );
+}
