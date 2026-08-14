@@ -180,15 +180,18 @@ button { font: inherit; }
 .project-image { overflow: hidden; background: #111722; }
 .project-card:first-child .project-image { aspect-ratio: 1.65; }
 .project-card:not(:first-child) .project-image { aspect-ratio: 1.75; }
-.project-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
-.project-card:hover .project-image img { transform: scale(1.035); }
+.project-image img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; transition: filter .35s ease; }
+.project-card:hover .project-image img { filter: brightness(1.08); }
 .project-info { padding: 24px; }
 .project-category { color: var(--cyan); font: 10px var(--app-font-mono); text-transform: uppercase; letter-spacing: .1em; }
 .project-info h3 { margin: 10px 0 10px; font-size: 22px; letter-spacing: -.05em; line-height: 1.15; }
 .project-card:not(:first-child) .project-info h3 { font-size: 18px; }
 .project-info p { margin: 0 0 19px; color: var(--muted-text); font-size: 13px; line-height: 1.7; }
+.project-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
 .project-cta { display: inline-flex; align-items: center; gap: 8px; color: var(--text); font-size: 11px; font-weight: 800; transition: color .2s ease, gap .25s var(--ease); }
 .project-card:hover .project-cta { gap: 13px; color: var(--cyan); }
+.project-link { display: inline-flex; align-items: center; gap: 7px; color: var(--muted-text); font: 11px var(--app-font-mono); transition: color .2s ease, transform .25s var(--ease); }
+.project-link:hover, .project-link:focus-visible { color: var(--cyan); transform: translateY(-1px); }
 
 .credentials-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
 .credential-card { padding: 31px; min-height: 240px; border: 1px solid var(--line); background: rgba(13,26,43,.7); }
@@ -226,11 +229,13 @@ button { font: inherit; }
 .modal-close { display: grid; place-items: center; width: 37px; height: 37px; flex: 0 0 auto; border: 1px solid var(--line); background: transparent; color: var(--muted-text); cursor: pointer; transition: color .2s ease, border-color .2s ease; }
 .modal-close:hover { color: var(--cyan); border-color: var(--cyan); }
 .modal-content { display: grid; grid-template-columns: 1.05fr .95fr; gap: 27px; padding: 27px 28px 31px; }
-.modal-content img { width: 100%; aspect-ratio: 1.45; object-fit: cover; border: 1px solid var(--line); }
+.modal-image { min-width: 0; background: var(--navy); border: 1px solid var(--line); }
+.modal-content img { display: block; width: 100%; height: auto; max-height: 430px; object-fit: contain; object-position: center; }
 .detail-list { display: grid; gap: 20px; }
 .detail-item h4 { margin: 0 0 6px; color: var(--cyan); font: 11px var(--app-font-mono); text-transform: uppercase; letter-spacing: .1em; }
 .detail-item p { margin: 0; color: var(--muted-text); font-size: 13px; line-height: 1.72; }
 .modal-tools { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 7px; }
+.modal-actions { display: flex; gap: 18px; flex-wrap: wrap; }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes modal-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 

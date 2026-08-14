@@ -1,0 +1,663 @@
+SESSION 2 — PORTFOLIO REFINEMENT, CONTENT, PROJECT LINKS & RESUME
+
+Continue from the existing portfolio website created in Session 1.
+
+IMPORTANT:
+Do NOT rebuild the website from scratch.
+Do NOT replace the current design system.
+Do NOT create a generic developer portfolio.
+
+The current dark Data Analyst / Business Intelligence aesthetic, typography, layout, navigation, hero image, section structure, smooth scrolling, and transitions are already good. Preserve them and make only the improvements specified below.
+
+The goal of this session is to make the portfolio recruiter-ready, accurate, polished, fully linked, and technically reliable.
+
+==================================================
+1. HERO SECTION — UPDATE THE COPY
+==================================================
+
+Replace the current generic hero copy.
+
+Current headline:
+"Turning Data Into Business Impact."
+
+Replace it with:
+
+"Turning Complex Data Into Clear Business Decisions."
+
+Keep "Business Decisions" highlighted using the existing cyan accent.
+
+Use this supporting text:
+
+"I build analytical solutions with SQL, Power BI, Excel and Python — turning complex data into dashboards, measurable insights, and decision-ready business intelligence."
+
+Keep the existing:
+- eyebrow
+- professional photograph
+- CTA buttons
+- statistics strip
+- overall layout
+- animation
+
+Do not make the hero paragraph excessively long.
+
+The hero should immediately communicate:
+Data Analyst + Business Intelligence + analytical problem solving.
+
+==================================================
+2. ABOUT SECTION — REWRITE PROFESSIONALLY
+==================================================
+
+Replace the current generic About copy with the following:
+
+"I’m a B.Tech Artificial Intelligence & Data Science student focused on Data Analytics and Business Intelligence. My work centers on transforming raw data into structured analysis, interactive dashboards, and insights that help explain what is happening in a business and why."
+
+Second paragraph:
+
+"My core toolkit includes SQL, Power BI, Excel, Python, Pandas, NumPy, DAX and data visualization. Through projects and my Finance Internship at Yodaplus Technologies, I’ve worked across business intelligence, financial analysis, AI-powered analytical workflows, and data-driven problem solving."
+
+Third paragraph:
+
+"I’m particularly interested in Data Analyst and Business Intelligence roles where I can combine analytical thinking, technical skills, and business context to turn data into useful decisions."
+
+Keep the existing right-side "working signal" visual/card if present.
+
+Do not invent:
+- years of experience
+- professional achievements
+- companies
+- business impact metrics
+- job titles
+- production experience
+
+==================================================
+3. PROJECT THUMBNAILS — CRITICAL FIX
+==================================================
+
+The current project thumbnails/screenshots are being cropped.
+
+FIX THIS.
+
+For all project images, preserve the COMPLETE original image.
+
+Do NOT use object-fit: cover for dashboard/project screenshots.
+
+Use behavior equivalent to:
+
+object-fit: contain;
+object-position: center;
+
+Use an appropriate dark background around the image if the aspect ratio does not match the container.
+
+Priority:
+
+1. Full screenshot visibility
+2. Correct aspect ratio
+3. No distortion
+4. Clean presentation
+
+It is completely acceptable to have empty/padded space around a screenshot.
+
+It is NOT acceptable to crop important dashboard content.
+
+Apply this to:
+
+1. Project VELOX
+2. Electronics Distribution Analytics
+3. AI-Powered Customer Retention Intelligence System
+
+The same rule must apply both:
+- project cards
+- large project case-study/modal previews
+
+The entire dashboard/application screenshot must remain visible.
+
+==================================================
+4. PROJECT LINKS
+==================================================
+
+I have already provided the actual URLs in this Replit project.
+
+Use those exact URLs.
+
+Do NOT invent URLs.
+Do NOT create placeholder URLs.
+Do NOT use "#".
+Do NOT use fake demo links.
+
+There are three projects.
+
+------------------------------------------
+PROJECT 1 — PROJECT VELOX
+------------------------------------------
+
+Buttons:
+
+"View Case Study"
+
+"GitHub ↗"
+
+GitHub must link to the Project VELOX repository I provided.
+
+There is NO live demo for VELOX.
+
+Do not create a Live Demo button.
+
+------------------------------------------
+PROJECT 2 — ELECTRONICS DISTRIBUTION ANALYTICS
+------------------------------------------
+
+Buttons:
+
+"View Case Study"
+
+"GitHub ↗"
+
+GitHub must link to the Electronics Distribution Analytics repository I provided.
+
+There is NO live demo.
+
+Do not create a Live Demo button.
+
+------------------------------------------
+PROJECT 3 — AI-POWERED CUSTOMER RETENTION
+------------------------------------------
+
+Buttons:
+
+"View Case Study"
+
+"GitHub ↗"
+
+"Live Demo ↗"
+
+GitHub must link to the Customer Retention repository I provided.
+
+Live Demo must link to the actual Customer Retention live demo URL I provided.
+
+==================================================
+5. PROJECT CASE STUDIES
+==================================================
+
+Keep the existing project case-study/modal interaction.
+
+When "View Case Study" is clicked, display a polished project case study.
+
+Keep the existing structure:
+
+- Category
+- Project title
+- Large project screenshot
+- Overview
+- Problem
+- Approach
+- Key Analytical Work
+- Tools
+- GitHub
+- Live Demo where applicable
+
+Do not invent unsupported project information.
+
+------------------------------------------
+PROJECT VELOX
+------------------------------------------
+
+Keep the existing factual description around:
+
+- Five-page Power BI business intelligence platform
+- Unified semantic model
+- 150+ reusable DAX measures
+- Executive dashboard
+- Operations dashboard
+- Customer dashboard
+- Restaurant dashboard
+- Financial dashboard
+- Business intelligence
+- Power BI
+- DAX
+- Data modeling
+
+------------------------------------------
+ELECTRONICS DISTRIBUTION ANALYTICS
+------------------------------------------
+
+Keep the existing factual description around:
+
+- Sales
+- Costs
+- Shipments
+- Profitability
+- Product performance
+- Regional analysis
+- Business trends
+- Power BI
+- DAX
+- Excel
+- Data Analysis
+- Data Visualization
+
+------------------------------------------
+CUSTOMER RETENTION
+------------------------------------------
+
+Keep the existing factual description around:
+
+- Customer churn prediction
+- Classification models
+- Customer behavior
+- SHAP interpretability
+- Python
+- Pandas
+- scikit-learn
+- Streamlit
+- Machine Learning
+
+Do not invent accuracy percentages or business results.
+
+==================================================
+6. PROJECT IMAGE RESPONSIVENESS
+==================================================
+
+Project screenshots must work correctly on:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+The screenshot must remain fully visible at all sizes.
+
+Do not solve desktop cropping by breaking mobile.
+
+The image container should adapt responsively.
+
+For screenshots:
+
+FULL IMAGE > FILLING CONTAINER
+
+==================================================
+7. REMOVE CERTIFICATION
+==================================================
+
+I have decided not to feature certifications.
+
+Remove the certification card currently shown in the Education & Certification section.
+
+Keep the Education section.
+
+Do NOT create another certification section.
+
+The portfolio should focus on:
+
+Education
+Experience
+Skills
+Projects
+
+==================================================
+8. EDUCATION
+==================================================
+
+Keep:
+
+K J Somaiya Institute of Technology
+
+Bachelor of Engineering
+
+Artificial Intelligence & Data Science
+
+CGPA: 8.99/10
+
+Status: Pursuing
+
+Preserve the existing professional card design.
+
+Do not invent graduation dates or certifications.
+
+==================================================
+9. CONTACT SECTION
+==================================================
+
+Simplify the Contact section.
+
+It should contain ONLY:
+
+Email
+
+LinkedIn
+
+Do NOT show GitHub in the Contact section.
+
+Do NOT show Resume in the Contact section.
+
+GitHub is already represented through project links and the footer.
+
+Resume is already represented through:
+- Navbar
+- Hero
+
+Keep the existing visual style of the Contact section.
+
+Use the actual Gmail/email address I provided.
+
+Use the actual LinkedIn URL I provided.
+
+==================================================
+10. NAVBAR RESUME BUTTON
+==================================================
+
+The Navbar Resume button must use the actual PDF resume uploaded to this project.
+
+The previous website incorrectly linked to something similar to:
+
+sahil-darji-resume.txt
+
+REMOVE that behavior completely.
+
+The Resume button must:
+
+- open/download the actual PDF
+- use the uploaded PDF
+- work correctly
+- never point to a .txt file
+- never produce a missing file
+- never use placeholder content
+
+Use the actual uploaded resume PDF.
+
+==================================================
+11. HERO DOWNLOAD RESUME
+==================================================
+
+The Hero:
+
+"Download Resume"
+
+button must use the exact same PDF.
+
+Both resume buttons should reference the same actual PDF asset.
+
+Do not create duplicate resume files.
+
+Test the link.
+
+==================================================
+12. FOOTER
+==================================================
+
+The current footer contains placeholder information such as:
+
+"Email — address not provided"
+
+and Resume.
+
+Remove all placeholder information.
+
+Create a clean professional footer.
+
+Left side:
+
+"Sahil Darji"
+
+"Data Analyst | Business Intelligence"
+
+Right side:
+
+"© 2026 Sahil Darji"
+
+Clickable links:
+
+Email
+LinkedIn
+GitHub
+
+The GitHub link must point to my PERSONAL GitHub profile.
+
+Do NOT put Resume in the footer.
+
+Do NOT show raw URLs.
+
+Do NOT show placeholder text.
+
+Do NOT show "address not provided".
+
+==================================================
+13. PERSONAL GITHUB VS PROJECT GITHUB
+==================================================
+
+Keep these separate.
+
+PROJECT LINKS:
+
+Project VELOX → VELOX repository
+
+Electronics Distribution Analytics → Electronics repository
+
+Customer Retention → Customer Retention repository
+
+PERSONAL GITHUB:
+
+Footer → personal GitHub profile
+
+Do not accidentally use the personal GitHub profile as a project repository link.
+
+==================================================
+14. NAVIGATION & ANIMATIONS
+==================================================
+
+The current navigation animations are excellent.
+
+DO NOT REMOVE THEM.
+
+Keep the existing smooth transition behavior inspired by the reference experience.
+
+When clicking:
+
+Home
+About
+Skills
+Experience
+Projects
+Education
+Contact
+
+the page should smoothly move to the correct section.
+
+Ensure:
+
+- no abrupt jumping
+- no incorrect section offsets
+- fixed navbar does not cover section headings
+- active navigation state updates correctly
+- mobile navigation works
+- clicking navigation repeatedly does not break animation
+- browser scrolling still works normally
+
+Preserve the current animation style.
+
+==================================================
+15. HERO IMAGE
+==================================================
+
+Keep my professional photograph.
+
+Do not replace it.
+
+Do not unnecessarily process or degrade the image.
+
+Preserve:
+
+- face quality
+- facial details
+- original sharpness
+- proportions
+
+The current treatment/background is acceptable.
+
+==================================================
+16. RESPONSIVE DESIGN
+==================================================
+
+Verify the complete website on:
+
+Desktop
+Tablet
+Mobile
+
+Pay special attention to:
+
+- hero photograph
+- hero typography
+- navigation
+- project cards
+- project screenshots
+- case-study modal
+- contact section
+- footer
+
+No horizontal overflow.
+
+No text clipping.
+
+No buttons going outside containers.
+
+No cropped project screenshots.
+
+==================================================
+17. ACCESSIBILITY & INTERACTION
+==================================================
+
+All clickable elements should have meaningful labels.
+
+External links should behave appropriately.
+
+Buttons should have visible hover/focus states.
+
+Do not make important information accessible only through hover.
+
+The website should remain usable with normal keyboard navigation.
+
+==================================================
+18. NO UNNECESSARY CONTENT
+==================================================
+
+Do NOT add:
+
+- fake testimonials
+- fake client logos
+- fake statistics
+- fake awards
+- fake certifications
+- fake employment
+- fake project results
+- fake business impact
+- unnecessary charts
+- unnecessary sections
+
+Every statement should be supported by my actual profile, projects, education, or experience.
+
+==================================================
+19. FINAL QUALITY CHECK
+==================================================
+
+Before considering this session complete, inspect the RUNNING website rather than only modifying source code.
+
+Verify all of the following:
+
+[ ] Hero headline updated
+
+[ ] Hero supporting text updated
+
+[ ] About section updated
+
+[ ] Project VELOX screenshot fully visible
+
+[ ] Electronics screenshot fully visible
+
+[ ] Customer Retention screenshot fully visible
+
+[ ] No project screenshot is cropped
+
+[ ] VELOX GitHub works
+
+[ ] Electronics GitHub works
+
+[ ] Customer Retention GitHub works
+
+[ ] Customer Retention Live Demo works
+
+[ ] Personal GitHub works
+
+[ ] LinkedIn works
+
+[ ] Email works
+
+[ ] Navbar Resume opens the actual PDF
+
+[ ] Hero Download Resume opens the actual PDF
+
+[ ] No .txt resume link remains
+
+[ ] Certification card removed
+
+[ ] Education remains
+
+[ ] Contact contains only Email + LinkedIn
+
+[ ] Footer contains Email + LinkedIn + GitHub
+
+[ ] Footer contains no Resume
+
+[ ] Footer contains no placeholder text
+
+[ ] Navigation animations still work
+
+[ ] Active navigation state works
+
+[ ] Project case-study modal works
+
+[ ] Project screenshots remain fully visible inside modals
+
+[ ] Mobile layout works
+
+[ ] No horizontal overflow
+
+[ ] No broken assets
+
+[ ] No broken links
+
+[ ] No console errors
+
+[ ] No placeholder content remains
+
+==================================================
+FINAL DESIGN DIRECTION
+==================================================
+
+The final website should communicate within a few seconds:
+
+"This is a serious aspiring Data Analyst / Business Intelligence professional who can work with real data, build analytical systems, and communicate insights clearly."
+
+The design should feel:
+
+- Professional
+- Analytical
+- Premium
+- Restrained
+- Modern
+- Recruiter-friendly
+- Data-focused
+
+Avoid making it feel:
+
+- flashy
+- overly futuristic
+- like a generic software developer portfolio
+- like an AI-generated template
+
+MOST IMPORTANT:
+
+Do not redesign the successful Session 1 work.
+
+Refine it.
+
+Fix the project image presentation, integrate the actual links and PDF, improve the written content, simplify Contact/Footer, remove Certification, and verify the entire website works end-to-end.

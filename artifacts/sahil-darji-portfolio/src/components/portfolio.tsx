@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
 import {
   ArrowDownRight,
-  Check,
   ChevronRight,
   Download,
+  ExternalLink,
   Menu,
   X,
 } from 'lucide-react';
@@ -23,6 +23,8 @@ type Project = {
   problem: string;
   approach: string;
   analyticalWork: string;
+  github: string;
+  liveDemo?: string;
 };
 
 const navItems = [
@@ -47,6 +49,7 @@ const projects: Project[] = [
     problem: 'Not specified in the provided brief.',
     approach: 'Built around a unified semantic model and reusable DAX measures across five dashboard areas.',
     analyticalWork: 'Executive, operations, customer, restaurant and financial dashboard views; 150+ reusable DAX measures.',
+    github: 'https://github.com/darji-sahil/project-velox',
   },
   {
     id: 'electronics',
@@ -59,6 +62,7 @@ const projects: Project[] = [
     problem: 'Not specified in the provided brief.',
     approach: 'Structured dashboard views around sales, costs, shipments, profitability, product performance and regional trends.',
     analyticalWork: 'Interactive analysis of sales, costs, shipments, profitability, product performance and regional business trends.',
+    github: 'https://github.com/darji-sahil/electronics-distribution-analytics-dashboard',
   },
   {
     id: 'retention',
@@ -71,6 +75,7 @@ const projects: Project[] = [
     problem: 'Not specified in the provided brief.',
     approach: 'Used classification models and SHAP to connect churn-risk prediction with interpretable customer behavior insights.',
     analyticalWork: 'Customer churn-risk prediction, classification modeling and interpretable analysis with SHAP.',
+    github: 'https://github.com/darji-sahil/churn-retention-intelligence-system',
   },
 ];
 
@@ -140,7 +145,7 @@ function Navbar({ active, scrolled, scrollTo }: { active: string; scrolled: bool
             </button>
           ))}
         </nav>
-        <a className="resume-link" href="/sahil-darji-resume.txt" download data-testid="link-resume-nav">
+        <a className="resume-link" href="/Sahil-Darji-Resume.pdf" download data-testid="link-resume-nav">
           Resume <Download size={13} />
         </a>
         <button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen} aria-controls="mobile-nav" data-testid="button-mobile-menu">
@@ -151,7 +156,7 @@ function Navbar({ active, scrolled, scrollTo }: { active: string; scrolled: bool
             {navItems.map(([id, label]) => (
               <button key={id} className={active === id ? 'active' : ''} onClick={() => move(id)} data-testid={`button-mobile-nav-${id}`}>{label}</button>
             ))}
-            <a href="/sahil-darji-resume.txt" download onClick={() => setMenuOpen(false)} data-testid="link-resume-mobile">Download Resume</a>
+            <a href="/Sahil-Darji-Resume.pdf" download onClick={() => setMenuOpen(false)} data-testid="link-resume-mobile">Download Resume</a>
           </nav>
         )}
       </div>
@@ -167,12 +172,12 @@ function Hero({ scrollTo }: { scrollTo: (id: string) => void }) {
         <div className="hero-grid">
           <div>
             <Reveal><div className="eyebrow">Data Analyst <span aria-hidden="true">•</span> Business Intelligence</div></Reveal>
-            <Reveal delay="stagger-1"><h1>Turning Data Into <em>Business Impact.</em></h1></Reveal>
-            <Reveal delay="stagger-2"><p className="hero-copy">I build data-driven solutions using SQL, Power BI, Excel and Python to transform raw data into clear, actionable business insights.</p></Reveal>
+            <Reveal delay="stagger-1"><h1>Turning Complex Data Into <em>Clear Business Decisions.</em></h1></Reveal>
+            <Reveal delay="stagger-2"><p className="hero-copy">I build analytical solutions with SQL, Power BI, Excel and Python — turning complex data into dashboards, measurable insights, and decision-ready business intelligence.</p></Reveal>
             <Reveal delay="stagger-3">
               <div className="hero-actions">
                 <button className="button-primary" onClick={() => scrollTo('projects')} data-testid="button-view-work">View My Work <ArrowDownRight size={15} /></button>
-                <a className="button-secondary" href="/sahil-darji-resume.txt" download data-testid="link-download-resume">Download Resume <Download size={14} /></a>
+                <a className="button-secondary" href="/Sahil-Darji-Resume.pdf" download data-testid="link-download-resume">Download Resume <Download size={14} /></a>
               </div>
               <div className="hero-note"><span className="status-dot" /> Open to analytics-focused opportunities</div>
             </Reveal>
@@ -209,8 +214,9 @@ function About() {
         <div className="about-grid">
           <Reveal delay="stagger-1">
             <div className="about-copy">
-              <p>I'm a B.Tech Artificial Intelligence &amp; Data Science student focused on data analytics and business intelligence. I enjoy turning raw datasets into dashboards, analytical models, and insights that support better business decisions.</p>
-              <p>My core toolkit includes SQL, Power BI, Excel, Python, Pandas, NumPy and data visualization. I also have hands-on experience building AI-powered analytical workflows through my internship at Yodaplus Technologies.</p>
+              <p>I’m a B.Tech Artificial Intelligence &amp; Data Science student focused on Data Analytics and Business Intelligence. My work centers on transforming raw data into structured analysis, interactive dashboards, and insights that help explain what is happening in a business and why.</p>
+              <p>My core toolkit includes SQL, Power BI, Excel, Python, Pandas, NumPy, DAX and data visualization. Through projects and my Finance Internship at Yodaplus Technologies, I’ve worked across business intelligence, financial analysis, AI-powered analytical workflows, and data-driven problem solving.</p>
+              <p>I’m particularly interested in Data Analyst and Business Intelligence roles where I can combine analytical thinking, technical skills, and business context to turn data into useful decisions.</p>
               <div className="bring-grid">{bring.map((item) => <div className="bring-item" key={item}>{item}</div>)}</div>
             </div>
           </Reveal>
@@ -284,7 +290,7 @@ function Projects({ onOpen }: { onOpen: (project: Project) => void }) {
             <Reveal key={project.id} delay={`stagger-${(index % 3) + 1}`}>
               <article className="project-card" role="button" tabIndex={0} onClick={() => onOpen(project)} onKeyDown={(event: KeyboardEvent<HTMLElement>) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onOpen(project); } }} data-testid={`card-project-${project.id}`} aria-label={`View details for ${project.title}`}>
                 <div className="project-image"><img src={project.image} alt={`${project.title} dashboard thumbnail`} loading={index === 0 ? 'eager' : 'lazy'} /></div>
-                <div className="project-info"><div className="project-category">{project.category}</div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tools.slice(0, 4).map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div><div className="project-cta" style={{ marginTop: 20 }}>View Case Study <ChevronRight size={15} /></div></div>
+                <div className="project-info"><div className="project-category">{project.category}</div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tools.slice(0, 4).map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div><div className="project-actions"><div className="project-cta">View Case Study <ChevronRight size={15} /></div><a className="project-link" href={project.github} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()} aria-label={`Open ${project.title} on GitHub`}>GitHub <ExternalLink size={13} /></a></div></div>
               </article>
             </Reveal>
           ))}
@@ -298,22 +304,14 @@ function Credentials() {
   return (
     <section id="education" className="section">
       <div className="container-wide">
-        <Reveal><SectionHeading eyebrow="05 / Education & certification" title="A foundation in systems, analysis, and applied learning." /></Reveal>
+        <Reveal><SectionHeading eyebrow="05 / Education" title="A foundation in systems, analysis, and applied learning." /></Reveal>
         <div className="credentials-grid">
           <Reveal delay="stagger-1">
             <div className="credential-card">
-              <div className="credential-label">Education / 2022 — present</div>
+              <div className="credential-label">Education / Pursuing</div>
               <h3>K J Somaiya Institute of Technology</h3>
               <p>Bachelor of Engineering<br />Artificial Intelligence &amp; Data Science</p>
               <div className="credential-meta"><span>CGPA <strong>8.99/10</strong></span><span>Status <strong>Pursuing</strong></span></div>
-            </div>
-          </Reveal>
-          <Reveal delay="stagger-2">
-            <div className="credential-card" id="certifications">
-              <div className="credential-label">Certification / August 2026</div>
-              <h3>Deloitte Australia Data Analytics Job Simulation</h3>
-              <p>Forage</p>
-              <div className="credential-meta"><span><Check size={12} style={{ verticalAlign: 'middle', marginRight: 5, color: 'var(--green)' }} />Data Analysis</span><span>Forensic Technology</span><span>Tableau</span><span>Excel</span></div>
             </div>
           </Reveal>
         </div>
@@ -329,11 +327,9 @@ function Contact() {
         <Reveal>
           <div className="contact-block">
             <div><div className="eyebrow">06 / Contact</div><h2>Let's turn data into something useful.</h2><p>I'm open to Data Analyst, Business Intelligence and analytics-focused opportunities.</p></div>
-            <div className="contact-links">
-              <div className="contact-link" aria-disabled="true" data-testid="link-email-placeholder"><span>Email</span><span>Address not provided</span></div>
-              <div className="contact-link" aria-disabled="true" data-testid="link-linkedin-placeholder"><span>LinkedIn</span><span>Link not provided</span></div>
-              <div className="contact-link" aria-disabled="true" data-testid="link-github-placeholder"><span>GitHub</span><span>Link not provided</span></div>
-              <a className="contact-link" href="/sahil-darji-resume.txt" download data-testid="link-resume-contact"><span>Resume</span><span>Download <Download size={13} /></span></a>
+              <div className="contact-links">
+              <a className="contact-link" href="mailto:sahildarji030@gmail.com" data-testid="link-email"><span>Email</span><span>sahildarji030@gmail.com</span></a>
+              <a className="contact-link" href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noreferrer" data-testid="link-linkedin"><span>LinkedIn</span><span>Connect <ExternalLink size={13} /></span></a>
             </div>
           </div>
         </Reveal>
@@ -343,7 +339,7 @@ function Contact() {
 }
 
 function Footer() {
-  return <footer className="footer"><div className="container-wide footer-inner"><div><span className="footer-name">Sahil Darji</span><span style={{ marginLeft: 12 }}>Data Analyst | Business Intelligence</span></div><div className="footer-links"><span>© 2026 Sahil Darji</span><span data-testid="link-footer-email-placeholder">Email — address not provided</span><a href="/sahil-darji-resume.txt" download data-testid="link-footer-resume">Resume</a></div></div></footer>;
+  return <footer className="footer"><div className="container-wide footer-inner"><div><span className="footer-name">Sahil Darji</span><span style={{ marginLeft: 12 }}>Data Analyst | Business Intelligence</span></div><div className="footer-links"><span>© 2026 Sahil Darji</span><a href="mailto:sahildarji030@gmail.com" data-testid="link-footer-email">Email</a><a href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noreferrer" data-testid="link-footer-linkedin">LinkedIn</a><a href="https://github.com/darji-sahil" target="_blank" rel="noreferrer" data-testid="link-footer-github">GitHub</a></div></div></footer>;
 }
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
@@ -361,13 +357,14 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
       <div className="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" tabIndex={-1} ref={dialogRef}>
         <div className="modal-top"><div><div className="eyebrow">{project.category}</div><h2 id="project-modal-title">{project.title}</h2></div><button className="modal-close" onClick={onClose} aria-label="Close project details" data-testid="button-close-project-modal"><X size={17} /></button></div>
         <div className="modal-content">
-          <div><img src={project.image} alt={`${project.title} full dashboard view`} /></div>
+          <div className="modal-image"><img src={project.image} alt={`${project.title} full dashboard view`} /></div>
           <div className="detail-list">
             <div className="detail-item"><h4>Overview</h4><p>{project.overview}</p></div>
             <div className="detail-item"><h4>Problem</h4><p>{project.problem}</p></div>
             <div className="detail-item"><h4>Approach</h4><p>{project.approach}</p></div>
             <div className="detail-item"><h4>Key analytical work</h4><p>{project.analyticalWork}</p></div>
             <div className="detail-item"><h4>Tools</h4><div className="modal-tools">{project.tools.map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div></div>
+            <div className="detail-item modal-actions"><a className="project-link" href={project.github} target="_blank" rel="noreferrer">GitHub <ExternalLink size={13} /></a>{project.liveDemo && <a className="project-link" href={project.liveDemo} target="_blank" rel="noreferrer">Live Demo <ExternalLink size={13} /></a>}</div>
           </div>
         </div>
       </div>
