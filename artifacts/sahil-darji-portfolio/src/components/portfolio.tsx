@@ -273,13 +273,13 @@ function Projects({ onOpen }: { onOpen: (project: Project) => void }) {
   return (
     <section id="projects" className="section projects-section">
       <div className="container-wide">
-        <Reveal><div className="projects-heading"><SectionHeading eyebrow="04 / Selected work" title="Dashboards that answer the next question." description="A selection of analytical systems built to move from information to understanding." /><span className="mono" style={{ color: 'var(--muted-text)', fontSize: 11 }}>03 / 03 PROJECTS</span></div></Reveal>
+        <Reveal><div className="projects-heading"><SectionHeading eyebrow="04 / Selected work" title="Dashboards that answer the next question." description="A selection of analytical systems built to move from information to understanding." /></div></Reveal>
         <div className="project-grid">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={`stagger-${(index % 3) + 1}`}>
               <article className="project-card" role="button" tabIndex={0} onClick={() => onOpen(project)} onKeyDown={(event: KeyboardEvent<HTMLElement>) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onOpen(project); } }} data-testid={`card-project-${project.id}`} aria-label={`View details for ${project.title}`}>
                 <div className="project-image"><img src={project.image} alt={`${project.title} dashboard thumbnail`} loading={index === 0 ? 'eager' : 'lazy'} /></div>
-                <div className="project-info"><div className="project-category">{project.category}</div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tools.slice(0, 4).map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div><div className="project-actions"><div className="project-cta">View Case Study <ChevronRight size={15} /></div><a className="project-link" href={project.github} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()} aria-label={`Open ${project.title} on GitHub`}>GitHub <ExternalLink size={13} /></a></div></div>
+                <div className="project-info"><div className="project-category">{project.category}</div><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tools.slice(0, 4).map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div><div className="project-actions"><div className="project-cta">View Case Study <ChevronRight size={15} /></div><div className="project-external-links"><a className="project-link" href={project.github} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()} aria-label={`Open ${project.title} on GitHub`}>GitHub <ExternalLink size={13} /></a>{project.liveDemo && <a className="project-link" href={project.liveDemo} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()} aria-label={`Open live demo for ${project.title}`}>Live Demo <ExternalLink size={13} /></a>}</div></div></div>
               </article>
             </Reveal>
           ))}
@@ -318,7 +318,7 @@ function Contact() {
             <div><div className="eyebrow">06 / Contact</div><h2>Let's turn data into something useful.</h2><p>I'm open to Data Analyst, Business Intelligence and analytics-focused opportunities.</p></div>
               <div className="contact-links">
               <a className="contact-link" href="mailto:sahildarji030@gmail.com" data-testid="link-email"><span>Email</span><span>sahildarji030@gmail.com</span></a>
-              <a className="contact-link" href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noreferrer" data-testid="link-linkedin"><span>LinkedIn</span><span>Connect <ExternalLink size={13} /></span></a>
+              <a className="contact-link" href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noreferrer" data-testid="link-linkedin"><span>LinkedIn</span><span className="contact-value">Connect <ExternalLink size={13} /></span></a>
             </div>
           </div>
         </Reveal>

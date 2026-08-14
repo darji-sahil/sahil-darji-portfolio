@@ -1,0 +1,111 @@
+SESSION 3 — FINAL POLISH ONLY
+
+The portfolio is now very close to final. Do NOT redesign, restructure, or change the existing visual style, layout direction, animations, colors, typography system, spacing philosophy, navigation, project content, or overall aesthetic.
+
+Make ONLY the following changes:
+
+1. PROJECT CARDS — ALIGN ALL THREE CARDS
+- In the "Selected Work / Projects" section, keep all 3 project cards in the same single horizontal row.
+- Make all three cards have the same overall height.
+- The bottoms of Project VELOX, Electronics Distribution Analytics, and AI-Powered Customer Retention Intelligence System must align perfectly on the same horizontal baseline.
+- Use equal-height cards / a consistent card structure so differences in description length, tags, or content do not cause one card to end higher or lower than another.
+- Keep the existing top alignment exactly as it is.
+- Do not change the card widths or overall 3-column composition unless technically necessary to achieve equal heights.
+
+2. PROJECT SECTION LABEL
+- Remove the "03 / 03 PROJECTS" text completely from the Projects / Selected Work section.
+- Do not replace it with anything.
+
+3. CUSTOMER RETENTION — LIVE DEMO
+- The third project, "AI-Powered Customer Retention Intelligence System", already has a working live demo link inside its project/case-study view.
+- Keep that existing live demo functionality.
+- ALSO add a clearly visible "Live Demo" clickable link/button directly on the Project 3 card in the main Projects section, alongside the existing GitHub link.
+- The Live Demo must point to the SAME working live-demo URL already used inside the Project 3 case-study view.
+- Do NOT create a fake/demo URL.
+- Do NOT add Live Demo links to Project VELOX or Electronics Distribution Analytics because they do not currently have live demos.
+- Keep GitHub links for all three projects working.
+
+4. SMALL TEXT / SECTION LABEL READABILITY
+The small cyan section labels such as:
+- "DATA ANALYST • BUSINESS INTELLIGENCE"
+- "01 / ABOUT"
+- "02 / SKILLS"
+- "03 / EXPERIENCE"
+- "04 / SELECTED WORK"
+- "05 / EDUCATION"
+- "06 / CONTACT"
+
+are currently a little too small.
+
+Increase their font size slightly so they are clearly readable at normal desktop viewing distance.
+
+Important:
+- Keep their current uppercase/monospace/letter-spaced visual character.
+- Do not make them huge.
+- Do not change the main heading sizes.
+- This is only a readability improvement.
+
+Also slightly improve the readability of the supporting/introductory text above the Projects section:
+"Dashboards that answer the next question."
+and
+"A selection of analytical systems built to move from information to understanding."
+
+Keep the same hierarchy and style, but make the supporting text slightly more readable.
+
+5. CONTACT — LINKEDIN ALIGNMENT
+In the Contact section, the LinkedIn row currently has:
+"Connect" and the external-link icon appearing vertically misaligned / stacked.
+
+Fix this so:
+Connect ↗
+
+appears on ONE horizontal line, vertically centered and properly aligned.
+
+Do not change the overall Contact section layout.
+Keep Email and LinkedIn positioned exactly within the existing right-side contact area.
+Only fix the alignment of the LinkedIn text and icon.
+
+6. REPLIT WATERMARK
+There is a "Made with Replit" watermark/badge visible at the bottom/right of the site.
+
+I clicked its X button and it disappeared in my current browser session.
+
+Do NOT add custom code or a fake replacement to hide it.
+Do NOT modify the portfolio design to accommodate it.
+
+If the current Replit plan/deployment allows the "Made with Replit" badge to be disabled/removed through the platform's supported settings, use that supported method.
+If it cannot be removed because of the current Replit plan, leave it unchanged rather than hacking around it.
+
+7. IMPORTANT — DO NOT CHANGE ANYTHING ELSE
+Do NOT:
+- redesign the homepage
+- change the dark navy/black + cyan visual theme
+- change the existing animations
+- change the hero image
+- change the hero headline
+- rewrite the About section
+- change the Skills section
+- change the Experience section
+- change Education
+- change project descriptions
+- change project thumbnails
+- change project GitHub URLs
+- change the existing live demo URL
+- remove any working functionality
+- change the navigation
+- change the Resume button
+- change the Email link
+- change the LinkedIn URL
+- add new sections
+- remove existing sections
+
+This is a FINAL POLISH pass. Make only the requested fixes above.
+
+After making the changes, verify:
+1. All 3 project cards have exactly equal height and their bottoms align.
+2. "03 / 03 PROJECTS" is gone.
+3. Project 3 has BOTH GitHub and Live Demo links on the main project card.
+4. Project 1 and Project 2 still have GitHub links but no fake Live Demo.
+5. The small cyan section labels are more readable.
+6. LinkedIn "Connect" + external-link icon are on one line.
+7. No existing animation, navigation, link, or responsive behavior has been broken.
