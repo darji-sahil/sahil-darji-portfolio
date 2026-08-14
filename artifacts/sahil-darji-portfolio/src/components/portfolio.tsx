@@ -10,7 +10,7 @@ import {
 import portraitPath from '@assets/Myphoto_1786686114750.png';
 import veloxPath from '@assets/VELOX_Executive_BI_thumbnail_1786686114749.png';
 import electronicsPath from '@assets/Electronics_Distribution_thumbnail_1786686114748.png';
-import retentionPath from '@assets/Customer_Retention_thumbnail_1786686114751.png';
+import retentionPath from '@assets/image_1786690007537.png';
 
 type Project = {
   id: string;
@@ -20,9 +20,6 @@ type Project = {
   image: string;
   tools: string[];
   overview: string;
-  problem: string;
-  approach: string;
-  analyticalWork: string;
   github: string;
   liveDemo?: string;
 };
@@ -45,10 +42,7 @@ const projects: Project[] = [
     description: 'A five-page Power BI business intelligence platform with a unified semantic model, 150+ reusable DAX measures, and executive, operations, customer, restaurant and financial dashboards.',
     image: veloxPath,
     tools: ['Power BI', 'DAX', 'Data Modeling', 'Business Intelligence'],
-    overview: 'A five-page Power BI business intelligence platform with a unified semantic model, 150+ reusable DAX measures, and executive, operations, customer, restaurant and financial dashboards.',
-    problem: 'Not specified in the provided brief.',
-    approach: 'Built around a unified semantic model and reusable DAX measures across five dashboard areas.',
-    analyticalWork: 'Executive, operations, customer, restaurant and financial dashboard views; 150+ reusable DAX measures.',
+    overview: 'A five-page Power BI business intelligence platform spanning Executive, Operations, Customer, Restaurant and Financial Intelligence. It uses a unified semantic model and 150+ reusable DAX measures for executive KPIs, dynamic scoring, time intelligence, alert engines, drill-through tooltips and contextual decision support.',
     github: 'https://github.com/darji-sahil/project-velox',
   },
   {
@@ -58,10 +52,7 @@ const projects: Project[] = [
     description: 'Interactive analytics dashboard built to analyze sales, costs, shipments, profitability, product performance and regional business trends.',
     image: electronicsPath,
     tools: ['Power BI', 'DAX', 'Excel', 'Data Analysis', 'Data Visualization'],
-    overview: 'Interactive analytics dashboard built to analyze sales, costs, shipments, profitability, product performance and regional business trends.',
-    problem: 'Not specified in the provided brief.',
-    approach: 'Structured dashboard views around sales, costs, shipments, profitability, product performance and regional trends.',
-    analyticalWork: 'Interactive analysis of sales, costs, shipments, profitability, product performance and regional business trends.',
+    overview: 'An interactive analytics dashboard for exploring sales, costs, shipments, profitability, product performance and regional business trends. The experience brings operational and commercial analysis into a single Power BI view using DAX, Excel and data visualization.',
     github: 'https://github.com/darji-sahil/electronics-distribution-analytics-dashboard',
   },
   {
@@ -71,11 +62,9 @@ const projects: Project[] = [
     description: 'Machine learning solution designed to predict customer churn risk and provide interpretable insights into customer behavior using classification models and SHAP.',
     image: retentionPath,
     tools: ['Python', 'Pandas', 'scikit-learn', 'SHAP', 'Streamlit', 'Machine Learning'],
-    overview: 'Machine learning solution designed to predict customer churn risk and provide interpretable insights into customer behavior using classification models and SHAP.',
-    problem: 'Not specified in the provided brief.',
-    approach: 'Used classification models and SHAP to connect churn-risk prediction with interpretable customer behavior insights.',
-    analyticalWork: 'Customer churn-risk prediction, classification modeling and interpretable analysis with SHAP.',
+    overview: 'An end-to-end customer retention intelligence system that predicts churn risk and explains customer behavior. It combines preprocessing, feature engineering, classification models, SHAP interpretability and a Streamlit interface for real-time predictions.',
     github: 'https://github.com/darji-sahil/churn-retention-intelligence-system',
+    liveDemo: 'https://churn-retention-system.streamlit.app/',
   },
 ];
 
@@ -214,7 +203,7 @@ function About() {
         <div className="about-grid">
           <Reveal delay="stagger-1">
             <div className="about-copy">
-              <p>I’m a B.Tech Artificial Intelligence &amp; Data Science student focused on Data Analytics and Business Intelligence. My work centers on transforming raw data into structured analysis, interactive dashboards, and insights that help explain what is happening in a business and why.</p>
+              <p>I’m a B.Tech Artificial Intelligence &amp; Data Science student focused on Data Analytics and Business Intelligence. My work centers on transforming raw data into structured analysis, interactive dashboards, and insights that explain what is happening in a business and why.</p>
               <p>My core toolkit includes SQL, Power BI, Excel, Python, Pandas, NumPy, DAX and data visualization. Through projects and my Finance Internship at Yodaplus Technologies, I’ve worked across business intelligence, financial analysis, AI-powered analytical workflows, and data-driven problem solving.</p>
               <p>I’m particularly interested in Data Analyst and Business Intelligence roles where I can combine analytical thinking, technical skills, and business context to turn data into useful decisions.</p>
               <div className="bring-grid">{bring.map((item) => <div className="bring-item" key={item}>{item}</div>)}</div>
@@ -360,9 +349,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div className="modal-image"><img src={project.image} alt={`${project.title} full dashboard view`} /></div>
           <div className="detail-list">
             <div className="detail-item"><h4>Overview</h4><p>{project.overview}</p></div>
-            <div className="detail-item"><h4>Problem</h4><p>{project.problem}</p></div>
-            <div className="detail-item"><h4>Approach</h4><p>{project.approach}</p></div>
-            <div className="detail-item"><h4>Key analytical work</h4><p>{project.analyticalWork}</p></div>
             <div className="detail-item"><h4>Tools</h4><div className="modal-tools">{project.tools.map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div></div>
             <div className="detail-item modal-actions"><a className="project-link" href={project.github} target="_blank" rel="noreferrer">GitHub <ExternalLink size={13} /></a>{project.liveDemo && <a className="project-link" href={project.liveDemo} target="_blank" rel="noreferrer">Live Demo <ExternalLink size={13} /></a>}</div>
           </div>

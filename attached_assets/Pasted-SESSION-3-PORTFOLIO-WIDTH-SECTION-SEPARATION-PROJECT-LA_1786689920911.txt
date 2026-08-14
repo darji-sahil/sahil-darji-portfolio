@@ -1,0 +1,492 @@
+SESSION 3 — PORTFOLIO WIDTH, SECTION SEPARATION, PROJECT LAYOUT & FINAL UI REFINEMENT
+
+The portfolio is now working very well visually and the animations/interactions are already excellent. DO NOT redesign the site, change the visual identity, remove animations, or introduce a different style.
+
+This is a refinement pass only. Preserve the existing:
+- dark navy/black visual system
+- cyan accent color
+- typography style
+- animations and transitions
+- navigation behavior
+- project modal/case-study behavior
+- responsive behavior
+- overall premium/minimal aesthetic
+
+Make ONLY the changes below.
+
+==================================================
+1. MAKE THE OVERALL PORTFOLIO WIDER
+==================================================
+
+The current portfolio feels too horizontally constrained in several sections.
+
+Increase the maximum content/container width across the main sections so the website uses more of the available desktop viewport.
+
+Important:
+- Do NOT simply increase font sizes.
+- Increase the actual content width.
+- Keep comfortable left/right margins.
+- Keep the layout premium and balanced.
+- Do not make it feel stretched.
+- The goal is a wider, more spacious desktop composition.
+
+The About, Skills, Experience, Projects, Education and Contact sections should all benefit from the wider content area.
+
+Maintain good responsive behavior on smaller screens.
+
+==================================================
+2. ADD CLEAR HORIZONTAL SECTION DIVIDERS
+==================================================
+
+I want each major section to feel clearly separated.
+
+Add a subtle horizontal divider/border at the end of each major section:
+
+- Home
+- About
+- Skills
+- Experience
+- Projects
+- Education
+- Contact
+
+The divider should:
+- be thin and subtle
+- use the existing dark/light border language of the site
+- span the main content width
+- NOT look like a heavy box
+- preserve the premium editorial aesthetic
+
+Do not add excessive borders inside sections.
+
+==================================================
+3. INCREASE THE SMALL SECTION LABELS
+==================================================
+
+The small uppercase section labels are currently too small.
+
+Examples:
+- DATA ANALYST • BUSINESS INTELLIGENCE
+- 01 / ABOUT
+- 02 / SKILLS
+- 03 / EXPERIENCE
+- 04 / SELECTED WORK
+- 05 / EDUCATION
+- 06 / CONTACT
+
+Increase their font size slightly so they are clearly readable.
+
+Keep:
+- uppercase styling
+- letter spacing
+- cyan accent
+- monospaced/technical visual character where already used
+
+Do NOT make them huge. They should remain labels, but should be comfortably readable on desktop.
+
+Also ensure they remain readable on mobile.
+
+==================================================
+4. ABOUT SECTION — REMOVE REPETITION
+==================================================
+
+The About section currently has:
+- main description
+- working signal panel
+- then additional descriptive content
+
+Keep the overall structure and working signal panel.
+
+However, make the About copy more concise and professional.
+
+Avoid generic portfolio language.
+
+Use this direction:
+
+"I’m a B.Tech Artificial Intelligence & Data Science student focused on Data Analytics and Business Intelligence. My work centers on transforming raw data into structured analysis, interactive dashboards, and insights that explain what is happening in a business and why.
+
+My toolkit includes SQL, Power BI, Excel, Python, Pandas, NumPy, DAX and data visualization. Through projects and my Finance Internship at Yodaplus Technologies, I’ve worked across business intelligence, financial analysis, AI-powered analytical workflows, and data-driven problem solving.
+
+I’m particularly interested in Data Analyst and Business Intelligence roles where I can combine analytical thinking, technical skills, and business context to turn data into useful decisions."
+
+Keep the wording professional and natural.
+
+==================================================
+5. PROJECT SECTION — MAKE ALL 3 PROJECTS FIT IN ONE ROW
+==================================================
+
+This is important.
+
+There are exactly THREE featured projects:
+
+1. Project VELOX
+2. Electronics Distribution Analytics
+3. AI-Powered Customer Retention Intelligence System
+
+On a wide desktop viewport, place all THREE project cards in a single horizontal row.
+
+Do NOT allow Project 3 to automatically drop onto a second row on desktop.
+
+Use a responsive grid such as:
+- desktop: 3 columns
+- tablet: 2 columns
+- mobile: 1 column
+
+The three cards should have equal visual importance.
+
+Do not make Project 1 excessively large compared with the other two.
+
+==================================================
+6. PROJECT THUMBNAILS — FULL IMAGE MUST BE VISIBLE
+==================================================
+
+This is one of the most important fixes.
+
+The project thumbnail images must NOT be cropped.
+
+Currently the images are being placed inside a card with too much unused/empty space and/or incorrect image fitting.
+
+For ALL THREE PROJECTS:
+
+- Show the complete thumbnail.
+- Do NOT crop the left/right/top/bottom portions.
+- Do NOT use aggressive object-cover behavior.
+- Preserve the original aspect ratio.
+- Use an appropriate object-fit/contain strategy.
+- The image should occupy the available thumbnail area naturally.
+- Avoid huge empty unused areas around the image.
+- The thumbnail container should adapt to the image aspect ratio as much as possible.
+
+The goal is:
+
+FULL IMAGE → CLEAN PRESENTATION → MINIMAL EMPTY SPACE
+
+Do not distort the images.
+
+For Project 3 specifically, I will provide a new thumbnail in the next session. Build the layout so the replacement image can be inserted easily.
+
+==================================================
+7. PROJECT 3 LIVE DEMO
+==================================================
+
+Project 3:
+
+AI-Powered Customer Retention Intelligence System
+
+This project HAS a live demo.
+
+Add a clearly visible "Live Demo" action/link for Project 3.
+
+The live demo must:
+- be clickable
+- open the provided demo URL
+- preferably open in a new tab
+- use the same visual treatment as the GitHub action
+- NOT be confused with the GitHub link
+
+Project 3 should have BOTH:
+
+GitHub ↗
+Live Demo ↗
+
+I will provide/re-enter the live demo URL if necessary.
+
+DO NOT invent a URL.
+
+==================================================
+8. ALL THREE PROJECTS MUST HAVE GITHUB
+==================================================
+
+Each project has its own GitHub repository.
+
+Project VELOX:
+GitHub link → use the URL I previously provided.
+
+Electronics Distribution Analytics:
+GitHub link → use the URL I previously provided.
+
+AI-Powered Customer Retention Intelligence System:
+GitHub link → use the URL I previously provided.
+
+Make sure every GitHub action is:
+- visible
+- clickable
+- opens the correct repository
+- opens in a new tab
+- visually consistent
+
+Do NOT replace these with my personal GitHub profile.
+
+==================================================
+9. PROJECT MODAL / CASE STUDY
+==================================================
+
+The project modal currently looks very good.
+
+Preserve the current modal design.
+
+Inside the modal:
+- keep the project title
+- keep the thumbnail
+- keep the Overview
+- keep Tools
+- keep GitHub
+- add Live Demo ONLY where a real demo exists
+
+However, remove the repetitive "KEY ANALYTICAL WORK" block from the project modal.
+
+The "Overview" section is enough.
+
+Make the Overview slightly more informative/longer so it communicates the project's purpose and analytical value without needing a second repetitive section.
+
+Do NOT write generic filler.
+
+For example, instead of:
+
+OVERVIEW
+...
+PROBLEM
+...
+APPROACH
+...
+KEY ANALYTICAL WORK
+...
+
+Use:
+
+OVERVIEW
+[strong, concise but informative project explanation]
+
+TOOLS
+[...]
+
+GitHub ↗
+Live Demo ↗ (only when available)
+
+Keep the modal clean.
+
+==================================================
+10. PROJECT IMAGE AREA IN MODAL
+==================================================
+
+The project modal currently gives the image a large card area with unnecessary empty space underneath the actual image.
+
+Fix this.
+
+The image container should closely fit the actual image.
+
+Requirements:
+- no excessive blank space
+- no cropping
+- no stretching
+- preserve aspect ratio
+- use the available modal width efficiently
+
+The screenshot/image itself should be the visual focus.
+
+Apply this consistently to all three projects.
+
+==================================================
+11. CUSTOMER RETENTION IMAGE
+==================================================
+
+For the Customer Retention project, keep the current image for now because it fills the remaining thumbnail area better than before.
+
+Do not replace or redesign it automatically.
+
+I will provide a new Project 3 thumbnail in the next session.
+
+Make sure the component supports replacing the image without changing the layout.
+
+==================================================
+12. CONTACT SECTION
+==================================================
+
+The Contact section currently has the correct information:
+
+Email
+LinkedIn
+
+Keep ONLY these two contact items.
+
+Do NOT add:
+- GitHub
+- Resume
+
+Those should not appear as contact items.
+
+The Email and LinkedIn links are currently pushed too far toward the right edge.
+
+Reposition the contact links so they are visually centered within the right-hand contact column/area.
+
+They should feel balanced relative to the large Contact heading on the left.
+
+Keep:
+Email → clickable mailto link
+LinkedIn → clickable LinkedIn URL
+
+Do not change the actual URLs.
+
+==================================================
+13. FOOTER
+==================================================
+
+The footer should NOT contain a Resume link.
+
+The footer may contain:
+
+Sahil Darji
+Data Analyst | Business Intelligence
+
+and:
+
+© 2026 Sahil Darji
+Email
+LinkedIn
+GitHub
+
+Keep these links clickable if they already are.
+
+Do NOT add Resume to the footer.
+
+==================================================
+14. RESUME BUTTON
+==================================================
+
+Keep the Resume button in the top navigation.
+
+Keep the "Download Resume" button on the Home section.
+
+Both must point to the actual uploaded PDF resume.
+
+Do NOT point them to a .txt file.
+
+The resume must download/open as the actual PDF file.
+
+Do not alter the visual styling of these buttons.
+
+==================================================
+15. HOME HERO
+==================================================
+
+Keep the current improved headline:
+
+"Turning
+Complex
+Data Into
+Clear
+Business
+Decisions."
+
+This is stronger and more aligned with my target Data Analyst / Business Intelligence positioning.
+
+Keep the supporting copy:
+
+"I build analytical solutions with SQL, Power BI, Excel and Python — turning complex data into dashboards, measurable insights, and decision-ready business intelligence."
+
+Do not revert this to the previous generic "Turning Data Into Business Impact" version.
+
+==================================================
+16. DO NOT ADD CERTIFICATIONS
+==================================================
+
+Do NOT add the Deloitte certification/simulation back into the Education section.
+
+Keep Education focused only on:
+
+KJ Somaiya Institute of Technology
+Bachelor of Engineering
+Artificial Intelligence & Data Science
+CGPA: 8.99/10
+Status: Pursuing
+
+The Education section should remain clean.
+
+==================================================
+17. IMPORTANT — DO NOT BREAK EXISTING FUNCTIONALITY
+==================================================
+
+Before making changes, preserve all currently working functionality:
+
+- navigation
+- smooth scrolling
+- section animations
+- project animations
+- project modal opening/closing
+- hover effects
+- GitHub links
+- LinkedIn link
+- email link
+- resume download
+- responsive layout
+
+Do not rewrite the application unnecessarily.
+
+Make the smallest CSS/component changes required.
+
+==================================================
+18. FINAL VISUAL QUALITY CHECK
+==================================================
+
+After implementation, inspect the entire page from top to bottom.
+
+Check specifically:
+
+HOME
+- wider layout
+- readable section label
+- headline remains strong
+- portrait remains properly framed
+
+ABOUT
+- wider layout
+- readable section label
+- concise professional copy
+- no awkward empty space
+
+SKILLS
+- wider cards
+- readable section label
+- balanced 3-column layout
+
+EXPERIENCE
+- wider layout
+- readable section label
+- clean horizontal divider
+
+PROJECTS
+- ALL THREE cards on one row on desktop
+- complete thumbnails visible
+- no cropping
+- no excessive empty image space
+- all GitHub links work
+- Project 3 has Live Demo
+- project modal remains excellent
+
+EDUCATION
+- no certification
+- clean single education card
+- divider after section
+
+CONTACT
+- only Email + LinkedIn
+- links visually centered
+- no Resume/GitHub contact cards
+
+FOOTER
+- no Resume link
+- Email / LinkedIn / GitHub allowed
+- clean alignment
+
+RESPONSIVE
+- desktop = 3 project columns
+- tablet = 2
+- mobile = 1
+- no horizontal overflow
+- no clipped text/images
+- no broken modal
+
+MOST IMPORTANT:
+Do not sacrifice the current premium visual quality while making the layout wider.
+
+The result should feel like the same portfolio, just more spacious, readable, polished, and recruiter-ready.
