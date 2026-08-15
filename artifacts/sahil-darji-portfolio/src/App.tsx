@@ -10,7 +10,7 @@ import portrait from '@assets/Myphotonew_1786758109439.png';
 import veloxImage from '@assets/CEO_Dashboard_1786758099805.png';
 import electronicsImage from '@assets/Electronics_Dashboard_Overview_1786758099804.png';
 import churnImage from '@assets/Customer_Retention_Dashboard_1786758099804.png';
-import resumePdf from '@assets/Sahil-Darji-Resume_1786758215241.pdf';
+import resumePdf from '@assets/SahilDarji_Resume.pdf';
 
 const queryClient = new QueryClient();
 
