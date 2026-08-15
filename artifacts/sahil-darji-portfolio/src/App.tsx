@@ -382,14 +382,14 @@ function Portfolio() {
           <div className="wrap contact-grid">
             <div className="reveal"><SectionEyebrow>Contact</SectionEyebrow><h2>Let's talk about a<br />Data Analyst role.</h2><p>Open to Data Analyst and Business Intelligence roles — happy to walk through any of the projects above in more depth, including the parts that didn't work on the first try.</p></div>
             <div className="contact-list reveal">
-              <div className="contact-row"><span className="k">Email</span><a className="v" href="mailto:sahildarji1030@gmail.com" data-testid="link-contact-email">sahildarji1030@gmail.com</a></div>
+              <div className="contact-row"><span className="k">Email</span><a className="v" href="mailto:sahildarji030@gmail.com" data-testid="link-contact-email">sahildarji030@gmail.com</a></div>
               <div className="contact-row"><span className="k">LinkedIn</span><a className="v" href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noopener noreferrer" data-testid="link-contact-linkedin">Connect</a></div>
               <div className="contact-row"><span className="k">GitHub</span><a className="v" href="https://github.com/darji-sahil" target="_blank" rel="noopener noreferrer" data-testid="link-contact-github">View repos</a></div>
             </div>
           </div>
         </section>
       </main>
-      <footer><div className="wrap footer-row"><div>Sahil Darji — Data Analyst · Business Intelligence</div><div className="footer-links"><a href="mailto:sahildarji1030@gmail.com">Email</a><a href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/darji-sahil" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
+      <footer><div className="wrap footer-row"><div>Sahil Darji — Data Analyst · Business Intelligence</div><div className="footer-links"><a href="mailto:sahildarji030@gmail.com">Email</a><a href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/darji-sahil" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </>
   );
