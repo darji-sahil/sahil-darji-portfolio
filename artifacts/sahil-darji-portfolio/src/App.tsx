@@ -296,7 +296,7 @@ function Portfolio() {
         <section id="hero" className="hero">
           <div className="wrap hero-grid">
             <div className={revealed ? 'reveal in' : 'reveal'}>
-              <h1>I turn messy business<br />data into <span className="underline">the next decision.</span></h1>
+              <h1>I turn messy business<br />data into the next decision.</h1>
               <p className="lede">Data analyst focused on Power BI, SQL and Python. Three shipped projects, real evaluation numbers, no filler metrics.</p>
               <div className="cta-row">
                 <a href="#projects" className="btn primary" data-testid="link-view-projects">View Projects <ArrowDown aria-hidden="true" /></a>
@@ -335,7 +335,7 @@ function Portfolio() {
               <h2 className="reveal">Where I'm sharp, and where I'm still building.</h2>
             </div>
             <div className="skill-cols reveal">
-              <SkillColumn level="Daily use" title="BI & Analytics" subtitle="Used in every project below, end to end." items={['SQL (MySQL) — joins, subqueries, CTEs, window functions', 'Power BI — semantic modeling, star schema', 'DAX — KPIs, time intelligence, dynamic scoring', 'Power Query, Excel', 'Data cleaning & modeling']} />
+              <SkillColumn level="Daily use" title="BI & Analytics" subtitle="Used across my dashboard and analytics work." items={['SQL (MySQL) — joins, subqueries, CTEs, window functions', 'Power BI — semantic modeling, star schema', 'DAX — KPIs, time intelligence, dynamic scoring', 'Power Query, Excel', 'Data cleaning & modeling']} />
               <SkillColumn level="Project-level" title="Programming & ML" subtitle="Applied in the churn model and internship work." items={['Python — Pandas, NumPy', 'scikit-learn — Logistic Regression, Random Forest, XGBoost', 'SHAP — model explainability', 'Streamlit — deployment', 'Tableau']} />
               <SkillColumn level="Working knowledge" title="Tools & AI Workflows" subtitle="From coursework and the Yodaplus internship." items={['CrewAI — multi-agent task design', 'Prompt engineering & evaluation criteria', 'Git & GitHub', 'Linux fundamentals', 'Business communication']} />
             </div>
