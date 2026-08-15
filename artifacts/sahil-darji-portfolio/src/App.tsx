@@ -384,7 +384,7 @@ function Portfolio() {
             <div className="contact-list reveal">
               <div className="contact-row"><span className="k">Email</span><a className="v" href="mailto:sahildarji030@gmail.com" data-testid="link-contact-email">sahildarji030@gmail.com</a></div>
               <div className="contact-row"><span className="k">LinkedIn</span><a className="v" href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noopener noreferrer" data-testid="link-contact-linkedin">Connect</a></div>
-              <div className="contact-row"><span className="k">GitHub</span><a className="v" href="https://github.com/darji-sahil" target="_blank" rel="noopener noreferrer" data-testid="link-contact-github">View repos</a></div>
+              <div className="contact-row"><span className="k">GitHub</span><a className="v" href="https://github.com/darji-sahil?tab=repositories" target="_blank" rel="noopener noreferrer" data-testid="link-contact-github">View repos</a></div>
             </div>
           </div>
         </section>
