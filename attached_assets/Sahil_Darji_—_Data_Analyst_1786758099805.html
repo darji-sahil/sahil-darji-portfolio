@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)file:///C:/Users/Sahil/Downloads/index_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahil Darji — Data Analyst</title>
+<meta name="description" content="Sahil Darji — Data Analyst specializing in Power BI, SQL and Python. Business intelligence dashboards, data modeling and analytics projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Sahil Darji — Data Analyst_files/css2" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1521;
+  --surface:#161E2C;
+  --surface-2:#1B2434;
+  --ink:#F3F1E9;
+  --muted:#9AA3B5;
+  --line:#2A3345;
+  --cell:#3DAE73;      /* excel-inspired green */
+  --cell-bg:#17271F;
+  --highlight:#F2B705;  /* highlighter amber */
+  --mono:'IBM Plex Mono',monospace;
+  --display:'Space Grotesk',sans-serif;
+  --body:'IBM Plex Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+section[id]{scroll-margin-top:84px;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  line-height:1.55;
+  background-image:
+    linear-gradient(var(--surface) 1px, transparent 1px),
+    linear-gradient(90deg, var(--surface) 1px, transparent 1px);
+  background-size:64px 64px;
+  background-attachment:fixed;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.01em;color:var(--ink);}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--cell);display:flex;align-items:center;gap:8px;margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:8px;height:8px;background:var(--cell);display:inline-block;}
+:focus-visible{outline:2px solid var(--cell);outline-offset:2px;}
+
+/* nav */
+header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(15,21,33,0.9);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1120px;margin:0 auto;}
+.brand{font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);}
+.nav-right{display:flex;align-items:center;gap:32px;}
+.navlinks{display:flex;gap:26px;font-size:14px;}
+.navlinks a{color:var(--muted);transition:color .15s;padding:4px 0;position:relative;}
+.navlinks a:hover, .navlinks a.active{color:var(--ink);}
+.navlinks a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--cell);}
+.resume-btn{
+  font-family:var(--mono);font-size:13px;
+  background:var(--cell);color:#0F1521;
+  padding:9px 16px;border:1px solid var(--cell);
+  display:inline-flex;align-items:center;gap:7px;font-weight:600;
+}
+.resume-btn:hover{background:#4dc687;}
+.navtoggle{
+  display:none;background:none;border:1px solid var(--line);color:var(--ink);
+  padding:8px 10px;font-family:var(--mono);cursor:pointer;
+}
+.mobile-menu{
+  display:none;flex-direction:column;gap:2px;
+  background:var(--surface);border-bottom:1px solid var(--line);
+  padding:8px 32px 16px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:12px 0;color:var(--muted);font-size:15px;border-bottom:1px dashed var(--line);}
+.mobile-menu a:last-child{border-bottom:none;}
+
+section{padding:100px 0;border-bottom:1px solid var(--line);}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* hero */
+#hero{padding-top:72px;padding-bottom:80px;}
+.hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
+.hero h1{font-size:clamp(36px,4.6vw,58px);line-height:1.08;margin-bottom:20px;}
+.hero h1 .ul{border-bottom:5px solid var(--highlight);}
+.hero p.lede{font-size:17px;color:var(--muted);max-width:480px;margin-bottom:32px;}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+.btn{
+  font-family:var(--mono);font-size:13px;padding:12px 20px;
+  border:1.5px solid var(--line);display:inline-flex;align-items:center;gap:8px;
+  color:var(--ink);background:transparent;cursor:pointer;
+}
+.btn svg{width:14px;height:14px;flex-shrink:0;}
+.btn.primary{background:var(--cell);color:#0F1521;border-color:var(--cell);font-weight:600;}
+.btn.primary:hover{background:#4dc687;}
+.btn.ghost:hover{background:var(--surface-2);border-color:var(--muted);}
+.status{font-family:var(--mono);font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px;}
+.status .dot{width:7px;height:7px;background:var(--cell);border-radius:50%;box-shadow:0 0 0 3px var(--cell-bg);}
+
+.portrait-frame{
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:14px;
+  max-width:460px;
+  width:100%;
+  margin:0 auto;
+}
+.portrait-frame .imgbox{
+  overflow:hidden;border:1px solid var(--line);
+  aspect-ratio:4/5;background:var(--surface-2);
+}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+.portrait-cap{
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+  display:flex;justify-content:space-between;margin-top:10px;padding:0 2px;
+}
+.portrait-cap span:first-child{color:var(--cell);}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start;}
+.about-grid h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:22px;}
+.about-grid > div:first-child p{color:var(--muted);margin-bottom:16px;max-width:540px;}
+.about-grid p strong{color:var(--ink);font-weight:600;}
+.approach-box{
+  border:1px solid var(--line);background:var(--surface);padding:20px 22px;
+  align-self:center;
+}
+.approach-box .tag{font-family:var(--mono);font-size:10.5px;color:var(--cell);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.approach-box p{font-size:14px;color:var(--ink);margin-bottom:0;line-height:1.5;}
+.approach-box .sign{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--muted);}
+
+/* skills */
+.skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+.skill-col{border:1px solid var(--line);background:var(--surface);}
+.skill-col .head{padding:18px 20px;border-bottom:1px solid var(--line);}
+.skill-col .head .lvl{font-family:var(--mono);font-size:11px;color:var(--cell);text-transform:uppercase;letter-spacing:.06em;}
+.skill-col .head h3{font-size:18px;margin-top:4px;}
+.skill-col .head p{font-size:13px;color:var(--muted);margin-top:6px;}
+.skill-col ul{list-style:none;padding:14px 20px 20px;}
+.skill-col li{
+  font-family:var(--mono);font-size:13px;padding:8px 0;
+  border-bottom:1px dashed var(--line);color:var(--ink);
+}
+.skill-col li:last-child{border-bottom:none;}
+
+/* experience */
+.exp-row{display:grid;grid-template-columns:220px 1fr;gap:40px;}
+.exp-date{font-family:var(--mono);font-size:13px;color:var(--cell);}
+.exp-loc{font-size:13px;color:var(--muted);margin-top:6px;}
+.exp-role h3{font-size:24px;margin-bottom:4px;}
+.exp-role .company{color:var(--muted);margin-bottom:20px;font-size:15px;}
+.exp-role ul{list-style:none;}
+.exp-role li{position:relative;padding-left:22px;margin-bottom:14px;color:var(--ink);font-size:15px;max-width:640px;}
+.exp-role li::before{content:"→";position:absolute;left:0;color:var(--cell);font-family:var(--mono);}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.tagrow span{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line);padding:5px 10px;color:var(--muted);}
+
+/* projects */
+.proj-head{margin-bottom:48px;}
+.proj-head h2{font-size:clamp(28px,3.4vw,38px);max-width:700px;}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.proj-card{
+  border:1px solid var(--line);background:var(--surface);cursor:pointer;
+  display:flex;flex-direction:column;transition:transform .15s, border-color .15s;
+}
+.proj-card:hover{transform:translateY(-4px);border-color:var(--cell);}
+.proj-thumb{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);background:var(--surface-2);}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.proj-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+.proj-body .cat{font-family:var(--mono);font-size:10.5px;color:var(--cell);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.proj-body h3{font-size:19px;margin-bottom:10px;}
+.proj-metric{
+  display:inline-block;border:1.5px solid var(--cell);background:var(--cell-bg);
+  font-family:var(--mono);font-size:12px;padding:5px 9px;margin-bottom:12px;color:var(--ink);width:fit-content;
+}
+.proj-body p{font-size:13.5px;color:var(--muted);margin-bottom:16px;flex:1;}
+.proj-more{font-family:var(--mono);font-size:12.5px;color:var(--ink);border-top:1px dashed var(--line);padding-top:14px;display:flex;justify-content:space-between;align-items:center;}
+.proj-card:hover .proj-more span:first-child{color:var(--cell);}
+
+/* modal */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(10,14,22,0.75);z-index:100;
+  display:none;align-items:center;justify-content:center;padding:32px;overflow-y:auto;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:var(--bg);max-width:1000px;width:100%;border:1px solid var(--line);
+  position:relative;display:grid;grid-template-columns:42% 58%;
+  height:min(88vh, 820px);min-height:0;overflow:hidden;
+}
+.modal-close{
+  position:absolute;top:14px;right:14px;width:34px;height:34px;z-index:5;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;
+  font-family:var(--mono);font-size:16px;
+}
+.modal-close:hover{background:var(--cell);color:#0F1521;border-color:var(--cell);}
+.modal-imgcol{
+  background:var(--surface-2);border-right:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  min-height:0;overflow:hidden;
+}
+.modal-imgcol img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border:1px solid var(--line);}
+.modal-content{padding:32px;min-height:0;overflow-y:auto;}
+.modal-content .cat{font-family:var(--mono);font-size:11px;color:var(--cell);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.modal-content h3{font-size:24px;margin-bottom:16px;max-width:90%;}
+.modal-section{margin-bottom:18px;}
+.modal-section .lbl{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+.modal-section p{font-size:14px;color:var(--ink);line-height:1.5;}
+.modal-metrics{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.modal-metrics span{
+  font-family:var(--mono);font-size:11.5px;border:1px solid var(--cell);background:var(--cell-bg);
+  padding:5px 9px;color:var(--ink);
+}
+.modal-links{display:flex;gap:16px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.modal-links a{font-family:var(--mono);font-size:13px;display:flex;align-items:center;gap:6px;color:var(--ink);border:1px solid var(--line);padding:8px 12px;}
+.modal-links a:hover{color:#0F1521;background:var(--cell);border-color:var(--cell);}
+
+/* education/certs */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;align-items:start;}
+.edu-card{border:1px solid var(--line);background:var(--surface);padding:26px;align-self:start;}
+.edu-card .tag{font-family:var(--mono);font-size:11px;color:var(--cell);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.edu-card h3{font-size:20px;margin-bottom:8px;}
+.edu-card .sub{color:var(--muted);font-size:14px;margin-bottom:14px;}
+.stat-inline{display:flex;gap:24px;font-family:var(--mono);font-size:13px;color:var(--muted);}
+.stat-inline b{color:var(--ink);}
+.cert-list{list-style:none;}
+.cert-list li{
+  font-size:13.5px;padding:12px 0;border-bottom:1px dashed var(--line);color:var(--ink);
+  display:flex;align-items:baseline;gap:10px;
+}
+.cert-list li:last-child{border-bottom:none;}
+.cert-list li::before{content:"—";color:var(--cell);font-family:var(--mono);flex-shrink:0;}
+
+/* contact */
+#contact{border-bottom:none;}
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;}
+.contact-grid h2{font-size:clamp(34px,5vw,52px);line-height:1.08;margin-bottom:20px;}
+.contact-grid p{color:var(--muted);max-width:440px;font-size:15px;}
+.contact-list{border-top:1px solid var(--line);}
+.contact-row{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);}
+.contact-row .k{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.contact-row .v{font-size:15px;}
+.contact-row a.v:hover{color:var(--cell);}
+
+footer{padding:28px 0;}
+.footer-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:12.5px;color:var(--muted);flex-wrap:wrap;gap:10px;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a:hover{color:var(--ink);}
+
+@media (max-width:900px){
+  .modal{grid-template-columns:1fr;height:auto;max-height:92vh;overflow-y:auto;}
+  .modal-imgcol{border-right:none;border-bottom:1px solid var(--line);max-height:38vh;overflow:hidden;}
+  .modal-content{overflow-y:visible;}
+}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-grid .portrait-frame{order:-1;max-width:280px;}
+  .about-grid{grid-template-columns:1fr;}
+  .skill-cols{grid-template-columns:1fr;}
+  .exp-row{grid-template-columns:1fr;gap:16px;}
+  .proj-grid{grid-template-columns:1fr;}
+  .edu-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .navlinks{display:none;}
+  .navtoggle{display:block;}
+  section{padding:64px 0;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Sahil Darji</div>
+    <div class="nav-right">
+      <div class="navlinks">
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#hero" class="active">Home</a>
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#about">About</a>
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#skills">Skills</a>
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#experience">Experience</a>
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#projects">Projects</a>
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#education">Education</a>
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#contact">Contact</a>
+      </div>
+      <a class="resume-btn" href="file:///C:/Users/Sahil/Downloads/assets/Sahil-Darji-Resume.pdf" download="Sahil-Darji-Resume.pdf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Resume
+      </a>
+      <button class="navtoggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="file:///C:/Users/Sahil/Downloads/index_1.html#hero">Home</a>
+    <a href="file:///C:/Users/Sahil/Downloads/index_1.html#about">About</a>
+    <a href="file:///C:/Users/Sahil/Downloads/index_1.html#skills">Skills</a>
+    <a href="file:///C:/Users/Sahil/Downloads/index_1.html#experience">Experience</a>
+    <a href="file:///C:/Users/Sahil/Downloads/index_1.html#projects">Projects</a>
+    <a href="file:///C:/Users/Sahil/Downloads/index_1.html#education">Education</a>
+    <a href="file:///C:/Users/Sahil/Downloads/index_1.html#contact">Contact</a>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>I turn messy business<br>data into <span class="ul">the next decision.</span></h1>
+      <p class="lede">Data analyst focused on Power BI, SQL and Python. Three shipped projects, real evaluation numbers, no filler metrics.</p>
+      <div class="cta-row">
+        <a href="file:///C:/Users/Sahil/Downloads/index_1.html#projects" class="btn primary">
+          View Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+        </a>
+        <a href="file:///C:/Users/Sahil/Downloads/assets/Sahil-Darji-Resume.pdf" download="Sahil-Darji-Resume.pdf" class="btn ghost">
+          Download Resume
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+      </div>
+      <div class="status"><span class="dot"></span> Open to Data Analyst &amp; BI roles</div>
+    </div>
+    <div class="portrait-frame">
+      <div class="imgbox">
+        <img src="file:///C:/Users/Sahil/Downloads/assets/images/profile.png" alt="Portrait of Sahil Darji">
+      </div>
+      <div class="portrait-cap"><span>Sahil Darji</span><span>Mumbai, India</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="eyebrow">About</div>
+      <h2>I don't build dashboards.<br>I build the question they answer.</h2>
+      <p>I'm a final-year <strong>B.Tech Artificial Intelligence &amp; Data Science</strong> student (KJSIT, Mumbai) focused on data analytics and business intelligence. My work spans SQL, Power BI, Excel, Python, and DAX — and every project I ship starts from a business question, not a chart type.</p>
+      <p>During my finance internship at <strong>Yodaplus Technologies</strong>, I built AI-powered financial analysis workflows using CrewAI across six industries — that's where I learned that a dashboard nobody trusts is worse than no dashboard at all.</p>
+      <p>I'm looking for Data Analyst or BI roles where I can sit close to the decision, not just the dataset.</p>
+    </div>
+    <div class="approach-box reveal">
+      <div class="tag">How I actually work</div>
+      <p>I don't start in Power BI. I start by writing down the decision someone needs to make and what would change their mind. Then I check whether the data can actually answer that — half the time the first version of a "dashboard" I build is just a scratch query to check if the insight is real before I model it. If a metric can't survive "so what would we do differently," I cut it.</p>
+      <div class="sign">— what "Data Analyst" means to me</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">Skills</div>
+    <h2 class="reveal" style="font-size:clamp(28px,3.4vw,38px);max-width:600px;">Where I'm sharp, and where I'm still building.</h2>
+    <div class="skill-cols reveal">
+      <div class="skill-col">
+        <div class="head"><div class="lvl">Daily use</div><h3>BI &amp; Analytics</h3><p>Used in every project below, end to end.</p></div>
+        <ul>
+          <li>SQL (MySQL) — joins, subqueries, CTEs, window functions</li>
+          <li>Power BI — semantic modeling, star schema</li>
+          <li>DAX — KPIs, time intelligence, dynamic scoring</li>
+          <li>Power Query, Excel</li>
+          <li>Data cleaning &amp; modeling</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <div class="head"><div class="lvl">Project-level</div><h3>Programming &amp; ML</h3><p>Applied in the churn model and internship work.</p></div>
+        <ul>
+          <li>Python — Pandas, NumPy</li>
+          <li>scikit-learn — Logistic Regression, Random Forest, XGBoost</li>
+          <li>SHAP — model explainability</li>
+          <li>Streamlit — deployment</li>
+          <li>Tableau</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <div class="head"><div class="lvl">Working knowledge</div><h3>Tools &amp; AI Workflows</h3><p>From coursework and the Yodaplus internship.</p></div>
+        <ul>
+          <li>CrewAI — multi-agent task design</li>
+          <li>Prompt engineering &amp; evaluation criteria</li>
+          <li>Git &amp; GitHub</li>
+          <li>Linux fundamentals</li>
+          <li>Business communication</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow reveal">Experience</div>
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-date">Jun 2025 – Aug 2025</div>
+        <div class="exp-loc">Mumbai, India</div>
+      </div>
+      <div class="exp-role">
+        <h3>Finance Intern</h3>
+        <div class="company">Yodaplus Technologies Pvt. Ltd.</div>
+        <ul>
+          <li>Built AI-powered financial analysis workflows on the CrewAI multi-agent framework, deployed across FMCG, IT, logistics, pharma, energy, and manufacturing use cases.</li>
+          <li>Designed the task logic, prompts, and evaluation criteria each agent used — this is what actually moved output quality, not the framework itself.</li>
+          <li>Adapted the same pipeline for US and Indian financial markets, since region-specific reporting norms and currency logic broke the first version.</li>
+          <li>Worked directly with product and engineering to turn ambiguous "make it smarter" feedback into concrete prompt and workflow changes.</li>
+        </ul>
+        <div class="tagrow">
+          <span>CrewAI</span><span>Financial Analysis</span><span>Prompt Engineering</span><span>Python</span><span>Data Analysis</span><span>Business Communication</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="proj-head reveal">
+      <div class="eyebrow">Selected Work</div>
+      <h2>Three projects. Each one had a real finding, not just a finished chart.</h2>
+    </div>
+    <div class="proj-grid reveal">
+
+      <div class="proj-card" onclick="openModal(&#39;velox&#39;)" tabindex="0" role="button" aria-label="Open Project VELOX case study" onkeydown="if(event.key===&#39;Enter&#39;)openModal(&#39;velox&#39;)">
+        <div class="proj-thumb"><img src="file:///C:/Users/Sahil/Downloads/assets/projects/velox.png" alt="VELOX executive Power BI dashboard showing health index KPIs and trend charts" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="cat">Business Intelligence · Power BI</div>
+          <h3>Project VELOX</h3>
+          <div class="proj-metric">17 tables · 5 dashboards · 1 semantic model</div>
+          <p>A 5-dashboard BI platform for a food-delivery business, built stakeholder-first: separate views for the CEO, ops, customer/revenue, restaurant success, and financial leakage — so each role sees only the KPIs they'd act on.</p>
+          <div class="proj-more"><span>Open case study →</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal(&#39;electronics&#39;)" tabindex="0" role="button" aria-label="Open Electronics Distribution Analytics case study" onkeydown="if(event.key===&#39;Enter&#39;)openModal(&#39;electronics&#39;)">
+        <div class="proj-thumb"><img src="file:///C:/Users/Sahil/Downloads/assets/projects/electronics.png" alt="Electronics distribution Power BI dashboard showing sales, cost and profit trends" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="cat">Data Analytics · Power BI</div>
+          <h3>Electronics Distribution Analytics</h3>
+          <div class="proj-metric">Star schema · field parameters · bookmarks</div>
+          <p>Sales, cost, profit and shipment analysis for an electronics distributor — built to let a regional manager flip between top and bottom performing categories/cities without opening a second report.</p>
+          <div class="proj-more"><span>Open case study →</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal(&#39;churn&#39;)" tabindex="0" role="button" aria-label="Open Customer Retention Intelligence case study" onkeydown="if(event.key===&#39;Enter&#39;)openModal(&#39;churn&#39;)">
+        <div class="proj-thumb"><img src="file:///C:/Users/Sahil/Downloads/assets/projects/churn.png" alt="Customer retention prediction app screenshot with churn risk inputs" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="cat">Machine Learning · Analytics</div>
+          <h3>Customer Retention Intelligence</h3>
+          <div class="proj-metric">ROC-AUC 0.83 · recall 48%→80%</div>
+          <p>A churn model on the Telco customer dataset. Baseline models missed half the customers who actually churned — rebalancing the training data traded some precision for recall, which is the trade the business actually wants.</p>
+          <div class="proj-more"><span>Open case study →</span><span>Python · SHAP</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow reveal">Education &amp; Certifications</div>
+    <h2 class="reveal" style="font-size:clamp(28px,3.4vw,38px);max-width:600px;">Formal training, plus proof I sought out more.</h2>
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <div class="tag">Pursuing · Expected 2027</div>
+        <h3>K J Somaiya Institute of Technology</h3>
+        <div class="sub">B.E., Artificial Intelligence &amp; Data Science — Honours in Blockchain Technology</div>
+        <div class="stat-inline"><span>CGPA <b>8.99 / 10</b></span></div>
+      </div>
+      <div class="edu-card">
+        <div class="tag">Certifications</div>
+        <h3>Applied learning</h3>
+        <ul class="cert-list">
+          <li>Deloitte Australia — Data Analytics Job Simulation</li>
+          <li>Data Analyst — Big 4 Ready</li>
+          <li>Data Analyst — Skill Certification</li>
+          <li>Power BI Workshop</li>
+          <li>Git &amp; GitHub</li>
+          <li>Linux Fundamentals</li>
+          <li>CrewAI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's talk about a<br>Data Analyst role.</h2>
+      <p>Open to Data Analyst and Business Intelligence roles — happy to walk through any of the projects above in more depth, including the parts that didn't work on the first try.</p>
+    </div>
+    <div class="contact-list reveal">
+      <div class="contact-row"><span class="k">Email</span><a class="v" href="mailto:sahildarji1030@gmail.com">sahildarji1030@gmail.com</a></div>
+      <div class="contact-row"><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noopener noreferrer">Connect</a></div>
+      <div class="contact-row"><span class="k">GitHub</span><a class="v" href="https://github.com/darji-sahil" target="_blank" rel="noopener noreferrer">View repos</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>Sahil Darji — Data Analyst · Business Intelligence</div>
+    <div class="footer-links">
+      <a href="mailto:sahildarji1030@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/sahil-darji-568352340/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/darji-sahil" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close case study">×</button>
+    <div class="modal-imgcol">
+      <img id="modalImg" src="file:///C:/Users/Sahil/Downloads/index_1.html" alt="">
+    </div>
+    <div class="modal-content">
+      <div class="cat" id="modalCat"></div>
+      <h3 id="modalTitle"></h3>
+      <div class="modal-metrics" id="modalMetrics"></div>
+      <div class="modal-section"><div class="lbl">Stack</div><p id="modalStack"></p></div>
+      <div class="modal-section"><div class="lbl">Business question</div><p id="modalQ"></p></div>
+      <div class="modal-section"><div class="lbl">What I found</div><p id="modalFind"></p></div>
+      <div class="modal-section"><div class="lbl">How it was built</div><p id="modalBuild"></p></div>
+      <div class="modal-section"><div class="lbl">Data source</div><p id="modalData"></p></div>
+      <div class="modal-links" id="modalLinks"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const projects = {
+  velox: {
+    cat: "Business Intelligence · Power BI",
+    title: "Project VELOX",
+    img: "assets/projects/velox.png",
+    imgAlt: "VELOX executive Power BI dashboard",
+    metrics: ["17-table semantic model","5 stakeholder dashboards","Dedicated tooltip pages"],
+    stack: "Power BI · DAX · Data Modeling · Power Query",
+    q: "A food-delivery platform's leadership can see individual metrics, but not which business area is actually the weakest right now, or which restaurants/zones need intervention first.",
+    find: "Splitting the report by stakeholder responsibility — instead of one giant dashboard — meant each composite score (Executive Health Index, Zone Stability Index, Discount Dependency Score) could point directly at an owner. The financial leakage view specifically separates discount exposure from cancellation exposure, because they need different fixes.",
+    build: "Star-schema semantic model (17 tables: orders, customers, restaurants, riders, promotions, geography, calendar) built over synthetic food-delivery data I generated myself to mimic realistic operational patterns. 150+ DAX measures for KPIs, dynamic scoring, time intelligence, alert banners, and report-page tooltips.",
+    data: "Synthetic dataset generated to mirror realistic food-delivery operations — built this way so I could design the semantic model and scoring logic without waiting on a real dataset with the right shape.",
+    links: [["GitHub","https://github.com/darji-sahil/project-velox"]]
+  },
+  electronics: {
+    cat: "Data Analytics · Power BI",
+    title: "Electronics Distribution Analytics",
+    img: "assets/projects/electronics.png",
+    imgAlt: "Electronics distribution Power BI dashboard",
+    metrics: ["Star schema model","Field-parameter measure selector","Top/bottom-4 category views"],
+    stack: "Power BI · DAX · Power Query · Data Modeling",
+    q: "A distributor needs to see, at a glance, which product categories and which cities are actually profitable versus just high-revenue — the two aren't the same thing.",
+    find: "Separating Top-4 and Bottom-4 categories by profit (not revenue) surfaces categories that look fine on a sales chart but are quietly losing money. Adding a field-parameter measure selector let one visual switch between Sales / Costs / Shipments / Profit without duplicating four separate charts.",
+    build: "Shipments fact table joined to Products, Locations, People and Calendar dimensions in a star schema. DAX measures for profit %, low-unit-shipment %, and month-over-month growth; Power Query for cleanup; bookmarks and dynamic tooltips for drill-down without leaving the page.",
+    data: "CSV-based distribution dataset covering products, shipments and regional sales.",
+    links: [["GitHub","https://github.com/darji-sahil/electronics-distribution-analytics-dashboard"]]
+  },
+  churn: {
+    cat: "Machine Learning · Analytics",
+    title: "Customer Retention Intelligence System",
+    img: "assets/projects/churn.png",
+    imgAlt: "Customer retention prediction Streamlit app",
+    metrics: ["ROC-AUC 0.83","Recall 48% → 80%","SHAP explainability"],
+    stack: "Python · scikit-learn · XGBoost · SHAP · Streamlit",
+    q: "Which customers are actually about to churn, and which factors — contract type, tenure, pricing, service gaps — are driving that risk, in language a retention team can act on?",
+    find: "The baseline Logistic Regression model only caught about 48% of customers who actually churned — meaning it missed roughly half of them, which is the worst failure mode for a retention tool. Rebalancing the training classes lifted recall to 80% for a modest drop in precision — the right trade for this problem, since a missed churner costs more than a false alarm. SHAP confirmed the drivers: month-to-month contracts, low tenure, higher monthly charges, and missing tech support / online security all push risk up.",
+    build: "Logistic Regression, Random Forest and XGBoost compared on ROC-AUC and F1; class-balancing applied to fix the recall problem; SHAP for both global feature importance and per-customer explanations; Streamlit front-end for live what-if predictions.",
+    data: "IBM's public Telco Customer Churn dataset (~7,000 customers) — a standard benchmark dataset, used here to prove out the full modeling-to-deployment pipeline end to end.",
+    links: [["GitHub","https://github.com/darji-sahil/churn-retention-intelligence-system"],["Live Demo","https://churn-retention-system.streamlit.app/"]]
+  }
+};
+
+let lastFocused = null;
+
+function openModal(key){
+  const p = projects[key];
+  const img = document.getElementById('modalImg');
+  img.src = p.img;
+  img.alt = p.imgAlt;
+  document.getElementById('modalCat').textContent = p.cat;
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalStack').textContent = p.stack;
+  document.getElementById('modalQ').textContent = p.q;
+  document.getElementById('modalFind').textContent = p.find;
+  document.getElementById('modalBuild').textContent = p.build;
+  document.getElementById('modalData').textContent = p.data;
+  const metricsEl = document.getElementById('modalMetrics');
+  metricsEl.innerHTML = p.metrics.map(m => `<span>${m}</span>`).join('');
+  const linksEl = document.getElementById('modalLinks');
+  linksEl.innerHTML = p.links.map(l => `<a href="${l[1]}" target="_blank" rel="noopener noreferrer">${l[0]} ↗</a>`).join('');
+  lastFocused = document.activeElement;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.modal-close').focus();
+}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  if(lastFocused) lastFocused.focus();
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+// mobile menu
+const navToggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+navToggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}));
+
+// one-time scroll reveal
+const seen = new Set();
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && !seen.has(entry.target)){
+      entry.target.classList.add('in');
+      seen.add(entry.target);
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// active nav link on scroll
+const navA = document.querySelectorAll('.navlinks a');
+const sections = document.querySelectorAll('section[id]');
+const navIo = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navA.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+entry.target.id));
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>navIo.observe(s));
+</script>
+
+
+</body></html>

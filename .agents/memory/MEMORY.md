@@ -1,0 +1,1 @@
+- [PDF processing environment](pdf-processing-environment.md) — wrapped system Python may lack pip and PyMuPDF, so check availability before visual PDF workflows.

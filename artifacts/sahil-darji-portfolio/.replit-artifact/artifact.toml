@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Sahil Darji — Data Analyst"
+description = "A polished personal portfolio for Sahil Darji, showcasing business intelligence dashboards, machine learning work, experience, education, and contact links for Data Analyst and BI opportunities."
+version = "1.0.0"
+id = "artifacts/sahil-darji-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20885
+
+[services.development]
+run = "pnpm --filter @workspace/sahil-darji-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sahil-darji-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/sahil-darji-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20885"
+BASE_PATH = "/"

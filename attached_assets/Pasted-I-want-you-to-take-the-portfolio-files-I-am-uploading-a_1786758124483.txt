@@ -1,0 +1,558 @@
+I want you to take the portfolio files I am uploading and perform a FINAL PRODUCTION FIX/QA PASS.
+
+IMPORTANT:
+This portfolio has already been designed and written. DO NOT redesign it, rebuild it from scratch, replace the visual identity, or introduce a different template.
+
+The current dark navy + green editorial/data-analyst aesthetic is intentional and should be PRESERVED.
+
+Your job is to fix the remaining technical, responsive, asset-loading, and interaction issues while preserving the existing design, content, typography, spacing style, navigation structure, project descriptions, and overall visual identity.
+
+I am also providing the actual image assets and the actual PDF resume. Use these exact supplied assets.
+
+==================================================
+1. ASSET LOADING — HIGHEST PRIORITY
+==================================================
+
+The current portfolio has broken images.
+
+The project cards currently show alt text such as:
+
+"VELOX executive Power BI dashboard"
+"Electronics distribution Power BI dashboard"
+"Customer retention prediction app"
+
+instead of the actual images.
+
+The project modal also shows the alt text instead of the image.
+
+My portrait in the hero section is also not loading correctly.
+
+DO NOT simply change CSS dimensions.
+
+Perform a complete asset/path audit.
+
+Verify that:
+- every image file actually exists
+- every image reference points to the correct file
+- capitalization matches
+- relative paths are correct
+- the same correct assets are used in both project cards and project modals
+- the portrait is correctly referenced
+- the resume PDF is correctly referenced
+
+Use the uploaded assets directly.
+
+Do NOT generate substitute images.
+Do NOT create placeholder images.
+Do NOT use remote image URLs when the supplied local asset exists.
+Do NOT change the actual project images.
+
+If necessary, reorganize the assets into a clean structure such as:
+
+assets/
+  images/
+    profile.png
+  projects/
+    velox.png
+    electronics.png
+    churn.png
+  Sahil-Darji-Resume.pdf
+
+but only if needed.
+
+The final project must work when hosted, with no dependency on my local Windows Downloads path.
+
+There must be ZERO references to:
+file:///
+C:\Users\
+Downloads\
+
+==================================================
+2. PORTRAIT
+==================================================
+
+Use the portrait image I uploaded.
+
+It should appear professionally in the hero section on the right.
+
+The current portrait card became unnecessarily large while the actual image was missing.
+
+Fix both problems:
+
+- make the portrait visibly load
+- keep the portrait card visually balanced with the hero
+- do not make the card excessively large
+- do not show alt text such as "Portrait of Sahil Darji"
+- do not crop the face awkwardly
+- preserve the supplied portrait rather than generating or altering it
+
+The portrait should feel like part of the design rather than a separate oversized card.
+
+==================================================
+3. PROJECT IMAGES
+==================================================
+
+Use the three uploaded project screenshots:
+
+1. VELOX
+2. Electronics Distribution Analytics
+3. Customer Retention Intelligence
+
+They must appear correctly in:
+
+- project cards
+- project detail modals
+
+The images must remain sharp and properly contained.
+
+Do not stretch them disproportionately.
+
+Use object-fit appropriately while preserving the important content of the screenshots.
+
+Do not use alt text as visible fallback content when the image is successfully loaded.
+
+Keep useful alt text for accessibility.
+
+==================================================
+4. PROJECT MODAL — IMPORTANT
+==================================================
+
+The project modal currently has a major responsive issue.
+
+At 80% browser zoom it can appear acceptable, but at 100% browser zoom the content can become clipped/partially visible and the modal becomes difficult or impossible to read.
+
+Fix the modal so it works properly at NORMAL 100% desktop browser zoom.
+
+Required structure:
+
+LEFT:
+- project image
+- image remains visually large enough to be useful
+- image should not become blurry because of unnecessary upscaling
+
+RIGHT:
+- category
+- project title
+- project metric/highlight blocks
+- Stack
+- Business Question
+- What I Found
+- How It Was Built
+- Data Source
+- GitHub link
+
+The right content column may scroll independently when the content is longer than the available modal height.
+
+The LEFT image column should remain visually stable.
+
+Do NOT make the entire page behind the modal scroll.
+
+Do NOT make the modal content impossible to reach.
+
+The modal must remain usable at:
+- 100% desktop zoom
+- 80% desktop zoom
+- smaller laptop resolutions
+- mobile widths
+
+The modal should have a sensible maximum height based on the viewport.
+
+The content column should have its own overflow scrolling when necessary.
+
+==================================================
+5. MODAL CLOSE BUTTON / SCROLLBAR
+==================================================
+
+There is currently an X close button in the upper-right corner of the modal.
+
+It visually overlaps or comes too close to the scrollbar/content area.
+
+Fix this.
+
+Requirements:
+
+- X remains clearly visible
+- X must never overlap the scrollbar
+- X must never cover the project title
+- X must remain clickable
+- scrolling content must have adequate right padding
+- close button should visually belong to the modal chrome rather than the scrolling content
+
+Do not remove the close button.
+
+==================================================
+6. PROJECT STACK
+==================================================
+
+Keep the Stack line that was recently added.
+
+For each project, show the technologies/skills actually used in that project.
+
+Example format:
+
+STACK
+Power BI · DAX · Data Modeling · Power Query
+
+Do this accurately for each project based on the existing portfolio content.
+
+Do NOT invent technologies.
+
+Do NOT add unnecessary skill lists.
+
+==================================================
+7. PROJECT CARD DESIGN
+==================================================
+
+Preserve the current project-card design.
+
+Do not redesign the project cards.
+
+The project images should occupy the existing image area naturally.
+
+Do not make the image container huge merely to compensate for a missing image.
+
+The current overall three-column project layout should remain.
+
+==================================================
+8. RESUME DOWNLOAD — CRITICAL
+==================================================
+
+There are TWO resume entry points:
+
+1. Resume button in the navbar
+2. Download Resume button in the hero
+
+Both currently fail to behave correctly.
+
+They must actually DOWNLOAD the supplied PDF.
+
+They must NOT:
+- open the PDF in a new browser tab
+- navigate to the PDF
+- show a file-not-found page
+- depend on a local Windows path
+
+Use the supplied PDF and a correct relative asset path.
+
+The expected behavior when clicking either button is a browser download of:
+
+Sahil-Darji-Resume.pdf
+
+Use an appropriate download mechanism/attribute.
+
+After implementing it, actually test the link and verify that the referenced PDF exists.
+
+Do not merely tell me that the HTML contains a download attribute.
+
+==================================================
+9. HERO
+==================================================
+
+Preserve the current hero design.
+
+Do NOT reintroduce:
+- A1
+- unnecessary project information
+- vanity statistics
+- generic portfolio counters
+
+The hero should remain focused and clean.
+
+Keep:
+
+"I turn messy business
+data into the next decision."
+
+and the existing supporting copy unless there is a genuine technical reason to change it.
+
+Keep:
+- View Projects
+- Download Resume
+- portrait
+- location/open-to-role information
+
+The View Projects arrow should remain downward.
+
+The Download Resume button should use a clear download icon.
+
+==================================================
+10. NAVBAR
+==================================================
+
+Preserve the current navbar.
+
+Name on the left.
+
+Navigation on the right/center-right.
+
+Resume button on the far right.
+
+The navigation should feel visually aligned with the Resume button rather than appearing randomly centered.
+
+Do not redesign the navbar.
+
+Keep:
+Home
+About
+Skills
+Experience
+Projects
+Education
+Contact
+Resume
+
+==================================================
+11. ABOUT
+==================================================
+
+Preserve the existing About content.
+
+The "How I Actually Work" card currently has good content, but the white/light card is unnecessarily tall.
+
+Shorten the card vertically while preserving the text.
+
+After reducing the height, properly align it with the surrounding About layout.
+
+Do not rewrite the content unless necessary for layout.
+
+==================================================
+12. SKILLS
+==================================================
+
+DO NOT redesign or rewrite the Skills section.
+
+The current Skills section is approved.
+
+Preserve its current structure and content.
+
+==================================================
+13. EXPERIENCE
+==================================================
+
+DO NOT redesign or rewrite the Experience section.
+
+The current Experience section is approved.
+
+Preserve its current structure and content.
+
+==================================================
+14. EDUCATION & CERTIFICATIONS
+==================================================
+
+The Education section is mostly correct.
+
+Fix the education card sizing.
+
+The education card should NOT stretch vertically simply because the certification card beside it is taller.
+
+Each card should size naturally according to its own content.
+
+The certification list must have consistent formatting.
+
+Currently the certifications had inconsistent presentation such as:
+
+Deloitte Australia — Data Analytics Job Simulation
+Data Analyst — Big 4 Ready
+Data Analyst — Skill Certification
+Power BI Workshop
+Git & GitHub · Linux Fundamentals · CrewAI
+
+Do NOT place multiple unrelated certifications on one line.
+
+Each certification should have its own consistent row.
+
+For example:
+
+Deloitte Australia — Data Analytics Job Simulation
+Data Analyst — Big 4 Ready
+Data Analyst — Skill Certification
+Power BI Workshop
+Git & GitHub
+Linux Fundamentals
+CrewAI
+
+Keep the existing visual style.
+
+==================================================
+15. CONTACT
+==================================================
+
+Preserve the Contact section.
+
+Remove the trailing right-arrow icons from:
+
+Connect
+View repos
+
+They should simply be:
+
+Connect
+View repos
+
+with no arrow after them.
+
+Do not add new decorative arrows.
+
+Regarding phone number:
+Do not invent or add a phone number.
+
+If a phone number already exists in the current portfolio, preserve it unless removing it is clearly necessary for the existing design.
+
+==================================================
+16. IMAGE QUALITY
+==================================================
+
+Do not unnecessarily upscale raster images.
+
+For project screenshots:
+
+- display at a sensible size
+- preserve aspect ratio
+- avoid distortion
+- avoid blurry rendering caused by stretching a small source image
+
+If the source image itself is smaller than the rendered area, use CSS/object-fit intelligently rather than artificially enlarging it excessively.
+
+==================================================
+17. RESPONSIVENESS
+==================================================
+
+This is a production website.
+
+Verify the layout at:
+
+- 100% desktop browser zoom
+- 80% desktop browser zoom
+- laptop-sized viewport
+- mobile viewport
+
+Especially test:
+
+- hero
+- portrait
+- project cards
+- project modal
+- modal scrolling
+- modal close button
+- education cards
+- navbar
+- resume download
+
+The project modal must be readable at 100% zoom.
+
+Do not solve desktop problems by breaking mobile.
+
+==================================================
+18. LINKS
+==================================================
+
+Preserve all existing working links.
+
+Do not replace existing URLs with placeholders.
+
+Verify:
+
+- GitHub links
+- LinkedIn
+- resume download
+- project links
+- email/contact links
+
+If a link is already correct, leave it alone.
+
+==================================================
+19. CONTENT INTEGRITY
+==================================================
+
+This is extremely important.
+
+Do NOT invent:
+- internships
+- companies
+- achievements
+- metrics
+- project results
+- technologies
+- certifications
+- experience
+- salary
+- business impact
+
+Do not "improve" the portfolio by fabricating stronger numbers.
+
+Use only the content already present in the supplied portfolio and files.
+
+==================================================
+20. DESIGN PRESERVATION
+==================================================
+
+The current design has already been intentionally refined.
+
+Therefore:
+
+DO NOT:
+- switch to a light theme
+- introduce a new template
+- add gradients everywhere
+- add excessive animations
+- add generic AI/SaaS decorations
+- add counters
+- add skill pills
+- change the typography unnecessarily
+- rewrite the entire portfolio
+- restructure sections unnecessarily
+
+Preserve the existing dark navy + green visual identity.
+
+==================================================
+21. FINAL QA — DO NOT SKIP
+==================================================
+
+After making the changes, perform an actual functional QA pass.
+
+Do not only inspect the source code.
+
+Verify that:
+
+1. Portrait visibly loads.
+2. All three project images visibly load.
+3. Project modal images visibly load.
+4. Resume navbar button downloads the PDF.
+5. Resume hero button downloads the PDF.
+6. No local Windows paths are referenced.
+7. Project modal works at 100% browser zoom.
+8. Project modal content is scrollable when necessary.
+9. Modal X never overlaps the scrollbar.
+10. Education cards have independent heights.
+11. Certifications are consistently one-per-row.
+12. Contact arrows are gone.
+13. Existing GitHub/LinkedIn/email links still work.
+14. Desktop layout remains intact.
+15. Mobile layout remains usable.
+
+If you have access to a browser preview, use it and test the rendered website rather than relying only on static source inspection.
+
+If an asset fails to load, diagnose the actual reason and fix it before declaring the task complete.
+
+==================================================
+FINAL RULE
+==================================================
+
+This is a FINISHING PASS, NOT A REDESIGN.
+
+Preserve what is already good.
+
+Fix what is broken.
+
+Do not make unrelated changes.
+
+At the end, give me a concise QA report containing:
+
+- files/assets verified
+- image loading status
+- resume download status
+- modal 100% zoom status
+- responsive status
+- remaining issues, if any
+
+Do not claim something was browser-tested if you only inspected the source.
